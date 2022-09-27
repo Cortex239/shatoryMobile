@@ -1,0 +1,7 @@
+{
+  "name": "Shatory",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
