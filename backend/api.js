@@ -41,14 +41,14 @@ app.post('/crearUsuario', bodyParser.json(), (req, res) => {
         res.status(201).send(JSON.stringify('Usuario Creada correctamente'));
     });
 });
-// app.get('/justificacion', (req:any, res:any) =>{
-//     connection.query('SELECT * FROM justificacion',(req1:any,res1:any) =>{
-//         if(!res1){
-//             res.status(400).send('No existe informacion');
-//         }
-//         res.status(200).send(res1);
-//     })
-// })
+app.get('/listarUsuarios', (req, res) => {
+    connection.query('SELECT * FROM usuario', (req1, res1) => {
+        if (!res1) {
+            res.status(400).send('No existe informacion');
+        }
+        res.status(200).send(res1);
+    });
+});
 // app.delete('/eliminarJustificacion/:id', (req:any,res:any) =>{
 //     let id = req.params.id;
 //     connection.query("DELETE FROM justificacion where id = ?", id, (req1:any,res1:any) =>{

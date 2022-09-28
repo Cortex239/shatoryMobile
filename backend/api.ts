@@ -11,7 +11,6 @@ const cors = require('cors');
 const app = express();
 const port = process.env.EXPRESSPORT;
 
-
 var connection = mysql.createConnection({
 
     host    : process.env.HOST,
@@ -61,16 +60,16 @@ app.post('/crearUsuario',bodyParser.json(),(req:any,res:any) =>{
     });
 });
 
-// app.get('/justificacion', (req:any, res:any) =>{
+app.get('/listarUsuarios', (req:any, res:any) =>{
 
-//     connection.query('SELECT * FROM justificacion',(req1:any,res1:any) =>{
+    connection.query('SELECT * FROM usuario',(req1:any,res1:any) =>{
 
-//         if(!res1){
-//             res.status(400).send('No existe informacion');
-//         }
-//         res.status(200).send(res1);
-//     })
-// })
+        if(!res1){
+            res.status(400).send('No existe informacion');
+        }
+        res.status(200).send(res1);
+    })
+})
 
 // app.delete('/eliminarJustificacion/:id', (req:any,res:any) =>{
 
