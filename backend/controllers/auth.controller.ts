@@ -1,8 +1,8 @@
-import connection from "../database";
-import jwt from "jsonwebtoken";
+import connection from '../database';
+import jwt from 'jsonwebtoken';
 require('dotenv').config();
-import { User } from "../models/user";
-import * as passwordEncryptor from "../utils/passwordEncryptor"
+import { User } from '../models/user';
+import * as passwordEncryptor from '../utils/passwordEncryptor'
 
 export const signUp = async (req: any, res: any) => {
     try {
