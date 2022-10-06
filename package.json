@@ -25,7 +25,7 @@
     "@capacitor/haptics": "4.0.1",
     "@capacitor/keyboard": "4.0.1",
     "@capacitor/status-bar": "4.0.1",
-    "@ionic/angular": "^6.1.9",
+    "@ionic/angular": "^6.2.9",
     "bcrypt": "^5.0.1",
     "bcryptjs": "^2.4.3",
     "cookie-session": "^2.0.0",
@@ -39,6 +39,7 @@
     "nodemon": "^2.0.20",
     "rxjs": "~6.6.0",
     "sequelize": "^6.23.2",
+    "swiper": "^8.4.2",
     "tslib": "^2.2.0",
     "zone.js": "~0.11.4"
   },
@@ -54,6 +55,10 @@
     "@angular/language-service": "^14.0.0",
     "@capacitor/cli": "4.3.0",
     "@ionic/angular-toolkit": "^6.0.0",
+    "@tailwindcss/aspect-ratio": "latest",
+    "@tailwindcss/forms": "latest",
+    "@tailwindcss/line-clamp": "latest",
+    "@tailwindcss/typography": "latest",
     "@types/bcrypt": "^5.0.0",
     "@types/jasmine": "~3.6.0",
     "@types/jasminewd2": "~2.0.3",
@@ -61,7 +66,11 @@
     "@types/node": "^12.11.1",
     "@typescript-eslint/eslint-plugin": "5.3.0",
     "@typescript-eslint/parser": "5.3.0",
+<<<<<<< HEAD
+    "autoprefixer": "^10.4.7",
+=======
     "autoprefixer": "^10.4.12",
+>>>>>>> 998244ace9b09d5fd71f11343663ab43eafa4cff
     "eslint": "^7.6.0",
     "eslint-plugin-import": "2.22.1",
     "eslint-plugin-jsdoc": "30.7.6",
@@ -74,7 +83,12 @@
     "karma-coverage-istanbul-reporter": "~3.0.2",
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "^1.5.0",
+<<<<<<< HEAD
+    "ngx-tailwind": "^4.0.0",
+    "postcss": "^8.4.14",
+=======
     "postcss": "^8.4.17",
+>>>>>>> 998244ace9b09d5fd71f11343663ab43eafa4cff
     "protractor": "~7.0.0",
     "tailwindcss": "^3.1.8",
     "ts-node": "~8.3.0",
