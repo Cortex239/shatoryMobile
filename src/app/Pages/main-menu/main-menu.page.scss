@@ -1,0 +1,20 @@
+@font-face {
+   font-family: letra;
+   src: url('../../../../letra.ttf') format('truetype');
+ }
+ h1{
+    display: flex;
+    padding-top: 2%;
+    font-family: letra;
+    padding-left: 3%;
+
+ }
+
+div{
+   background-color: #0e0b16;
+}
+ion-tab-bar{
+   --background:#0e0b16;
+}
+
+
