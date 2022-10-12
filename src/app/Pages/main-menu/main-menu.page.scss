@@ -13,8 +13,35 @@
 div{
    background-color: #0e0b16;
 }
+
+.logo{
+   width: 25%;
+}
+
 ion-tab-bar{
    --background:#0e0b16;
 }
 
+.imag{
+   width: 100%;
+   aspect-ratio: 16/9;
+   border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
 
+ion-card{
+   width: 100%;
+   aspect-ratio: 1/0.75;
+   --background: #e7dfdd4d;
+   border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    min-height: 463px;
+}
+
+ion-card-content{
+   text-align: justify;
+}

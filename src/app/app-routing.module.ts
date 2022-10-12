@@ -24,7 +24,14 @@ const routes: Routes = [
     path: 'home',
     loadChildren: () => import('./Pages/home/home.module').then( m => m.HomePageModule)
   },
-
+  {
+    path: 'menu',
+    loadChildren: () => import('./Pages/main-menu/main-menu.module').then( m => m.MainMenuPageModule)
+  },
+  {
+    path: 'profile',
+    loadChildren: () => import('./Pages/profile/profile.module').then( m => m.ProfilePageModule)
+  },
 
 
   // {

@@ -151,8 +151,9 @@ body {
     }
   }
 div.like{
-    padding-top: 3%;
-    padding-left: 87%;
+    
+    padding-left: 94.5%;
+    padding-bottom: 1.5%;
 }  
 
 div.descripcion{
@@ -185,14 +186,9 @@ div.descripcion{
 }
 .titleText{
   color: white;
-  font-size: x-large;
+  font-size: xx-large;
   position: absolute;
-  top: 90%;
-  left: 23%;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  text-align: center;
+  
   font-family: letra;
 }
 .textArea{
@@ -207,4 +203,27 @@ ion-card{
 ion-tab-bar{
     --background:#0e0b16;
     
+}
+.logo{
+  width: 25%;
+}
+
+img{
+  width:100%;
+  height:100%;
+}
+
+.myCard{
+  position:relative;
+}
+
+.myOverlay{
+    width: 100%;
+    height: 60px;
+    position: absolute;
+    z-index: 99;
+    bottom: 0px;
+    opacity: 0.5;
+    background: #000;
+    color: #fff;
 }
