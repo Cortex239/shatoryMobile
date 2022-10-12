@@ -1,8 +1,9 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>
-      Ionic Form
-    </ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title align="center ">Inicio o Registrar </ion-title>
   </ion-toolbar>
 </ion-header>
 <ion-content class="auth-form">
@@ -10,8 +11,8 @@
     <ion-row>
       <ion-col align-self-center>
         <ion-button [routerLink]="['/register']" expand="block" color="primary">Register</ion-button>
-        <span class="divider line one-line">or</span>
-        <span class="already">Already a user?</span>
+        
+        <span class="already"> Ya tienes una cuenta?</span>
         <ion-button [routerLink]="['/login']" expand="block" color="danger">Sign In</ion-button>
       </ion-col>
     </ion-row>
