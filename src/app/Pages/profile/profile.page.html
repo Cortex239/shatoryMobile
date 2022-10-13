@@ -1,13 +1,16 @@
 <ion-header>
   <ion-toolbar>
-    <div class="fondoApp">
+    <div >
       <ion-toolbar>
         <ion-tabs >
           <ion-tab-bar>
             <ion-tab-button>
-              <ion-icon name="happy-outline"></ion-icon>
+              <ion-menu-button>
+                <img class="logo"
+                src="https://cdn.discordapp.com/attachments/562443471659728954/1027646063911374918/LOGOSHTAROY.png">
+              </ion-menu-button>
             </ion-tab-button>
-            <ion-tab-button>
+            <ion-tab-button [routerLink]="['menu']" class="name">
               <ion-img src="https://cdn.discordapp.com/attachments/562443471659728954/1027646064402116739/SHATORY.png" class="shatory"></ion-img>
             </ion-tab-button>
             <ion-tab-button>

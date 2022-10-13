@@ -4,11 +4,11 @@
 }
 
 ion-content {
-  --ion-background-color: #0e0b16;
+  --ion-background-color: #2a1b3d;
 }
 
 ion-toolbar {
-  --ion-background-color:#0e0b16;
+  --ion-background-color:#2a1b3d;
 }
 
 h1.name {
@@ -243,12 +243,12 @@ div.descripcion {
 }
 
 ion-card {
-  --background:#0e0b16
+  --background:#2a1b3d
 ;
 }
 
 ion-tab-bar {
-  --background:#0e0b16;
+  --background:#2a1b3d;
 }
 
 .logo {

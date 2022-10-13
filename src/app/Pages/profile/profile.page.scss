@@ -4,11 +4,11 @@
     src: url('../../../../letra.ttf') format('truetype');
 
 }ion-content{
-    --ion-background-color: #0e0b16;
+    --ion-background-color: #2a1b3d;
 
 }
 ion-toolbar{
-    --ion-background-color:#0e0b16;
+    --ion-background-color:#2a1b3d;
 }
 h1.name{
     text-align: center;
@@ -18,10 +18,7 @@ h1.name{
 body {
     display: flex; justify-content: center;flex-direction: column;align-items: center;
   }
-  img{
-    background: #000; z-index:-1;
-    box-shadow:0 0 5px;
-  }
+  
   [id='toggle-heart'] {
     position: absolute;
     left: -100vw;
@@ -152,8 +149,11 @@ body {
   }
 div.like{
     
-    padding-left: 94.5%;
+    // padding-left: 94.5%;
     padding-bottom: 1.5%;
+    padding-right: 2%;
+    float:right;
+    font-size: min(3vw,36px);
 }  
 
 div.descripcion{
@@ -186,7 +186,7 @@ div.descripcion{
 }
 .titleText{
   color: white;
-  font-size: xx-large;
+  font-size: min(7vw, 48px);
   position: absolute;
   
   font-family: letra;
@@ -194,18 +194,22 @@ div.descripcion{
 .textArea{
   text-align: justify;
   color: #ffffff;
+  //font-size: 5vw;
+  padding-bottom: 3%;
+  font-size: min(5vw, 24px);
 }
 
 
 ion-card{
-    --background:#0e0b16
+    --background:#2a1b3d
 }
 ion-tab-bar{
-    --background:#0e0b16;
+    --background:#2a1b3d;
     
 }
 .logo{
-  width: 25%;
+  width: 100%;
+  --background:#2a1b3d;
 }
 
 img{
@@ -219,7 +223,7 @@ img{
 
 .myOverlay{
     width: 100%;
-    height: 60px;
+    height: 10vw;
     position: absolute;
     z-index: 99;
     bottom: 0px;

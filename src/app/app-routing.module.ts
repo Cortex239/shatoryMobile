@@ -5,7 +5,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'menu',
+    redirectTo: 'home-menu',
     pathMatch: 'full'
   },
   {
@@ -21,17 +21,22 @@ const routes: Routes = [
     loadChildren: () => import('./Pages/login/login.module').then( m => m.LoginPageModule)
   },
   {
-    path: 'home',
+    path: 'sesion',
     loadChildren: () => import('./Pages/home/home.module').then( m => m.HomePageModule)
   },
   {
-    path: 'menu',
+    path: 'home-menu',
     loadChildren: () => import('./Pages/main-menu/main-menu.module').then( m => m.MainMenuPageModule)
   },
   {
     path: 'profile',
     loadChildren: () => import('./Pages/profile/profile.module').then( m => m.ProfilePageModule)
   },
+  {
+    path: 'list-artist',
+    loadChildren: () => import('./Pages/list-artist/list-artist.module').then( m => m.ListArtistPageModule)
+  },
+
 
 
   // {
