@@ -35,7 +35,11 @@ const routes: Routes = [
   {
     path: 'sesion',
     loadChildren: () => import('./Pages/sesion/sesion.module').then( m => m.SesionPageModule)
+  },  {
+    path: 'artists',
+    loadChildren: () => import('./Pages/artists/artists.module').then( m => m.ArtistsPageModule)
   },
+
 
 
 

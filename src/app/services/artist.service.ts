@@ -10,17 +10,11 @@ export class ArtistService {
 
   constructor(private http:HttpClient) { }
 
-//   createTicket(artist:Artist) {
-//     return this.http.post(`${environment.API_URL}artists`, artist);
-//   }
-
-  getArtists() {
-    return this.http.get<Artist[]>(`${environment.API_URL}artists`);
+  getArtists(){
+    return this.http.get<Artist[]>(`http://localhost:3001/artists`);
   }
 
   getArtistByName(artistName:string) {
     return this.http.get<Artist>(`${environment.API_URL}artists/${artistName}`);
   }
-
-
 }

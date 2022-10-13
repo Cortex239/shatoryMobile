@@ -40,7 +40,6 @@ export function getArtists(req:any, res:any){
 export function getArtistsByName(req:any, res:any){
 
     let nameArtist = req.body.nombreArtista;
-    console.log(nameArtist);
     try {
         connection.query('CALL getArtistByName(?)', [nameArtist], (error:any, results:any) =>{
             res.status(200).send(results[0]);
