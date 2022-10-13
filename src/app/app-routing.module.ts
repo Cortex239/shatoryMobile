@@ -21,10 +21,6 @@ const routes: Routes = [
     loadChildren: () => import('./Pages/login/login.module').then( m => m.LoginPageModule)
   },
   {
-    path: 'sesion',
-    loadChildren: () => import('./Pages/home/home.module').then( m => m.HomePageModule)
-  },
-  {
     path: 'home-menu',
     loadChildren: () => import('./Pages/main-menu/main-menu.module').then( m => m.MainMenuPageModule)
   },
@@ -36,6 +32,11 @@ const routes: Routes = [
     path: 'list-artist',
     loadChildren: () => import('./Pages/list-artist/list-artist.module').then( m => m.ListArtistPageModule)
   },
+  {
+    path: 'sesion',
+    loadChildren: () => import('./Pages/sesion/sesion.module').then( m => m.SesionPageModule)
+  },
+
 
 
 
