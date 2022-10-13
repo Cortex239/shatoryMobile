@@ -34,15 +34,20 @@ ion-tab-bar{
 
 ion-card{
    width: 100%;
-   aspect-ratio: 1/0.75;
-   --background: #e7dfdd4d;
+   aspect-ratio: 1/0.8;
+   --background: #a4b3b65b;
    border-top-left-radius: 25px;
     border-top-right-radius: 25px;
     border-bottom-left-radius: 25px;
     border-bottom-right-radius: 25px;
-    min-height: 463px;
+    min-height: 110vw;
+    max-height: 400px;
 }
 
 ion-card-content{
    text-align: justify;
+   font-size: min(4vw, 36);
+}
+ion-card-title{
+   font-size: min(7vw, 48px);
 }

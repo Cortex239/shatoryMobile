@@ -5,6 +5,14 @@
 //     height: 100%;
 //     width: 100%;
 // }
+ion-item{
+    --background:#2a1b3d;
+}
 ion-input{
-    --background: #0b0e173b !important;
+    
+    background-color: rgba(240, 248, 255, 0) !important;
+    border-color: rgba(240, 248, 255, 0) !important;
+}
+ion-content{
+    --background:#2a1b3d;
 }
