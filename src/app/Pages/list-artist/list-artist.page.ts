@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Artist } from 'src/app/interfaces/artist';
+import { ArtistService } from 'src/app/services/artist.service';
 
 @Component({
   selector: 'app-list-artist',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListArtistPage implements OnInit {
 
-  constructor() { }
+  list:Array<Artist> = [];
+
+  constructor(private artistService:ArtistService) { }
 
   ngOnInit() {
+    this.getArtists();
   }
 
+  getArtists() {
+    this.artistService.getArtists().subscribe(data => {
+      this.list = data;
+    });
+  }
 }
