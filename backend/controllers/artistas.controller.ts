@@ -19,7 +19,7 @@ export function createArtist(req: any, res: any) {
     }
 }
 
-export function getArtists(req:any, res:any){
+export function getAllArtists(req:any, res:any){
 
     try {
 
@@ -47,7 +47,20 @@ export function getArtistsByName(req:any, res:any){
 
     } catch (error) {
 
-        console.log(error);
+        return res.status(500).json(error)
+    }
+}
+
+export function deleteArtistById(req:any, res:any){
+    
+    let id = req.params.id;
+    try {
+        connection.query('Delete * from artista where id = ?' [id], (error:any, results:any) => {
+
+            res.status(200).json({message: "Artista elimindao correctamente"});
+        });
+    } catch (error) {
+        
         return res.status(500).json(error)
     }
 }
