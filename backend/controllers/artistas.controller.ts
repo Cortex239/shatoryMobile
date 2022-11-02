@@ -53,7 +53,7 @@ export function getArtistsByName(req:any, res:any){
 
 export function deleteArtistById(req:any, res:any){
     
-    let id = req.params.id;
+    let id:number = req.params.id;
     try {
         connection.query('Delete * from artista where id = ?' [id], (error:any, results:any) => {
 
@@ -62,5 +62,21 @@ export function deleteArtistById(req:any, res:any){
     } catch (error) {
         
         return res.status(500).json(error)
+    }
+}
+
+export function updateArtistById(req:any, res:any) {
+
+    let id:number = req.params.id;
+    const updatedArtist:any = { nombreArtista:req.body.nombreArtista, descripcion:req.body.descripcion, linkImagen:req.body.linkImagen };
+
+    try {
+        
+        connection.query("UPDATE tickets SET ? WHERE ID = ?", [updatedArtist, id], (req_:any, results:any) => {
+            res.status(204).send(`Ticket actualizado!`);
+        });
+        
+    } catch (error) {
+        
     }
 }

@@ -7,5 +7,6 @@ router.post('/', artistController.createArtist);
 router.get('/', artistController.getAllArtists);
 router.get('/getByName', artistController.getArtistsByName);
 router.delete('/:id', artistController.deleteArtistById);
+router.put('/:id', artistController.updateArtistById);
 
 export default router;

@@ -8,6 +8,6 @@ import * as checkToken from '../middlewares/checkToken';
 router.post('/signIn', authController.signIn);
 router.post('/signUp', [checkSignUp.checkDuplicateUser], authController.signUp);
 //router.get('/profile', [checkToken.checkToken], authController.getProfile);
-router.get('/listar', authController.listar);
+router.get('/getAllProfile', authController.listar);
 
 export default router;
