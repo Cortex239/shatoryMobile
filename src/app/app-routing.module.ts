@@ -29,15 +29,20 @@ const routes: Routes = [
     loadChildren: () => import('./Pages/profile/profile.module').then( m => m.ProfilePageModule)
   },
   {
-    path: 'list-artist',
-    loadChildren: () => import('./Pages/list-artist/list-artist.module').then( m => m.ListArtistPageModule)
-  },
-  {
     path: 'sesion',
     loadChildren: () => import('./Pages/sesion/sesion.module').then( m => m.SesionPageModule)
-  },  {
+  },
+  {
     path: 'artists',
     loadChildren: () => import('./Pages/artists/artists.module').then( m => m.ArtistsPageModule)
+  },
+  {
+    path: 'locales',
+    loadChildren: () => import('./Pages/locales/locales.module').then( m => m.LocalesPageModule)
+  },
+  {
+    path: 'perfil-artista',
+    loadChildren: () => import('./Pages/perfil-artista/perfil-artista.module').then( m => m.PerfilArtistaPageModule)
   },
 
 

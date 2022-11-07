@@ -14,14 +14,19 @@ ion-col{
     display: block;
     margin-left: auto;
     margin-right: auto;
-    background-image: linear-gradient(
-    45deg,
-    hsl(267deg 100% 20%) 0%,
-    hsl(283deg 98% 21%) 45%,
-    hsl(295deg 85% 23%) 100%
-    );
+    // background-image: linear-gradient(
+    // 45deg,
+    // hsl(267deg 100% 20%) 0%,
+    // hsl(283deg 98% 21%) 45%,
+    // hsl(295deg 85% 23%) 100%
+    // );
     border-top-left-radius: 25px;
     border-top-right-radius: 25px;
     border-bottom-left-radius: 25px;
     border-bottom-right-radius: 25px;
+    
+}
+ion-toolbar{
+    --background:#2a1b3d;
+    
 }

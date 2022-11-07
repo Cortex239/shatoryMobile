@@ -8,13 +8,13 @@ import { Artist } from 'backend/models/artist';
 })
 export class ArtistService {
 
-  constructor(private http:HttpClient) { }
+  constructor(private http: HttpClient) { }
 
   getArtists(){
-    return this.http.get<Artist[]>(`http://localhost:3001/artists`);
+    return this.http.get<Artist[]>(`https://shatory-backend.herokuapp.com/artists`);
   }
 
-  getArtistByName(artistName:string) {
-    return this.http.get<Artist>(`${environment.API_URL}artists/${artistName}`);
+  getArtistById(idArtista: number) {
+    return this.http.get<Artist>(`https://shatory-backend.herokuapp.com/artists/${idArtista}`);
   }
 }

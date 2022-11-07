@@ -17,10 +17,18 @@
 
         <ion-list id="labels-list">
           <ion-list-header></ion-list-header>
-          <ion-item>
-            <ion-icon name="musical-notes-outline"></ion-icon>
-            <ion-title [routerLink]="['artists']" >Artistas</ion-title>
-          </ion-item>
+          <ion-menu-toggle>
+            <ion-item>
+              <ion-icon name="musical-notes-outline"></ion-icon>
+              <ion-title [routerLink]="['artists']" >Artistas</ion-title>
+            </ion-item>
+          </ion-menu-toggle>    
+          <ion-menu-toggle>
+            <ion-item>
+              <ion-icon name="home"></ion-icon>
+              <ion-title [routerLink]="['locales']" >Locales</ion-title>
+            </ion-item>
+          </ion-menu-toggle>  
         </ion-list>
       </ion-content>
     </ion-menu>

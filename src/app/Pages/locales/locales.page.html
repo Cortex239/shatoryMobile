@@ -28,13 +28,13 @@
 </ion-header>
 
 <ion-content>
-  <ion-list >    
-    <ion-item *ngFor="let item of list; let id = index" [routerLink]="['/profile']" >
-      <ion-thumbnail slot="start">
+  <ion-list>    
+    <ion-item *ngFor="let item of list" [routerLink]="['/profile']">
+      <!-- <ion-thumbnail slot="start">
         <img alt="Silhouette of mountains" src={{item.linkImagen}} />
-      </ion-thumbnail>
-      <ion-label (click)="obtenerArtista(item.idArtista)">{{item.nombreArtista}} </ion-label>
-    </ion-item >
+      </ion-thumbnail> -->
+      <ion-label>{{item.nombre}}</ion-label>
+    </ion-item>
   </ion-list>
 </ion-content>
 <ion-footer>
