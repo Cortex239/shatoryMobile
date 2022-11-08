@@ -24,9 +24,11 @@ export class ArtistsPage implements OnInit {
       console.log(data);
     });
   }
+
   obtenerArtista(id: any){
     console.log(id);
     this.artistService.getArtistById(id).subscribe(data =>{
+      console.log(data);
     });
   }
 }
