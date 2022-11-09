@@ -22,12 +22,6 @@ export class PerfilArtistaPage implements OnInit {
     this.obtenerArtista(this.data);
   }
 
-  getArtists() {
-    this.artistService.getArtists().subscribe(data => {
-      this.list = data;
-      console.log(data);
-    });
-  }
   obtenerArtista(id: any){
     console.log(id);
     this.artistService.getArtistById(id).subscribe(data =>{
