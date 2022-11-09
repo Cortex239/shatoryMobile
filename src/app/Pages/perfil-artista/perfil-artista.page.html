@@ -9,14 +9,14 @@
 
 <ion-content >
 
-  <ion-card>
+  <ion-card *ngFor="let item of artist; let id = index" >
     
     <ion-card-header>
       
       <ion-card class="myCard">
-        <!-- <img class="imgArtist" src={{item.linkImagen}} alt="" class="artista"> -->
+        <img class="imgArtist" src={{item.linkImagen}} alt="" class="artista">
         <div class="myOverlay">
-          <ion-text class="titleText">Young Cister</ion-text>
+          <ion-text class="titleText"> {{item.nombreArtista}}</ion-text>
            <div class="card-subtitle">
             <div class="interaction">
               <div class="like">
@@ -35,9 +35,11 @@
     </ion-card-header>
   
     <ion-card-content class="textArea">
-      Esteban Cisterna, conocido como Young Cister, es un cantante chileno de trap. Nació en Quilicura, Santiago, Chile,
+      <!-- Esteban Cisterna, conocido como Young Cister, es un cantante chileno de trap. Nació en Quilicura, Santiago, Chile,
       el 31 de agosto de 1996. Es reconocido por interpretar los sencillos "Survive", "Fuera de mí", "CNECC", "1178", "Volverte a ver",
-      "Chat", "XTACISS" y "Sigo pensándote", entre otros.
+      "Chat", "XTACISS" y "Sigo pensándote", entre otros. -->
+      {{item.descripcion}}
+      
     </ion-card-content>
   </ion-card> 
  
