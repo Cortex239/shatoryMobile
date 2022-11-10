@@ -43,7 +43,11 @@ const routes: Routes = [
   {
     path: 'perfil-artista/:id',
     loadChildren: () => import('./Pages/perfil-artista/perfil-artista.module').then( m => m.PerfilArtistaPageModule)
+  },  {
+    path: 'perfil-local',
+    loadChildren: () => import('./Pages/perfil-local/perfil-local.module').then( m => m.PerfilLocalPageModule)
   },
+
 
 
 
