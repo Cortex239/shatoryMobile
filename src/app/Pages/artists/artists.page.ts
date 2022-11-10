@@ -5,6 +5,7 @@ import { Location } from '@angular/common';
 import { Artist } from 'src/app/interfaces/artist';
 import { ActivatedRoute } from '@angular/router';
 import { PerfilArtistaPage } from '../perfil-artista/perfil-artista.page';
+import { LoadingController } from '@ionic/angular';
 
 
 @Component({
@@ -14,14 +15,22 @@ import { PerfilArtistaPage } from '../perfil-artista/perfil-artista.page';
 })
 export class ArtistsPage implements OnInit {
   list: Array<Artist> = [];
-  constructor(private artistService: ArtistService, private ruta: ActivatedRoute, private router: Router, private location: Location) { }
+  constructor(private artistService: ArtistService, private router: Router, private loadingCtrl: LoadingController) { }
 
   ngOnInit() {
+    this.showLoading();
     this.getArtists();
   }
+  async showLoading() {
+    const loading = await this.loadingCtrl.create({
+      message: 'Dismissing after 3 seconds...',
+    });
 
+    loading.present();
+  }
   getArtists() {
     this.artistService.getArtists().subscribe(data => {
+      this.loadingCtrl.dismiss();
       this.list = data;
       console.log(data);
     });
