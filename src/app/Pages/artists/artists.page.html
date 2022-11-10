@@ -27,15 +27,17 @@
   </ion-buttons>
 </ion-header>
 
-<ion-content>
-  <ion-list >    
-    <ion-item *ngFor="let item of list; let id = index"  >
-      <ion-thumbnail slot="start">
-        <img alt="Silhouette of mountains" src={{item.linkImagen}} />
-      </ion-thumbnail>
-      <ion-label (click)="obtenerArtista(item.idArtista)">{{item.nombreArtista}} </ion-label>
-    </ion-item >
-  </ion-list>
+<ion-content>  
+  <ion-card *ngFor="let item of list; let id = index">
+    <img class="artistImg" alt="Silhouette of mountains" src={{item.linkImagen}} />
+    <ion-card-header>
+      
+      <ion-card-title>{{item.nombreArtista}}</ion-card-title>
+      
+    </ion-card-header>  
+    <ion-button fill="clear" (click)="obtenerArtista(item.idArtista)">►Más info</ion-button>
+    
+  </ion-card>
 </ion-content>
 <ion-footer>
   <div class="fondoApp">

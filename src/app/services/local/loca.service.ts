@@ -13,7 +13,7 @@ export class LocaService {
     return this.http.get<Local[]>(`https://shatory-backend.herokuapp.com/local`);
   }
 
-  getLocalsByName(artistName: string) {
-    return this.http.get<Local>(`${environment.API_URL}artists/${artistName}`);
+  getLocalsByName(idLocal: number) {
+    return this.http.get<Local>(`https://shatory-backend.herokuapp.com/local/${idLocal}`);
   }
 }

@@ -1,0 +1,74 @@
+<!-- <ion-header *ngFor="let item of localForm; let id = index" >
+  <ion-toolbar>
+    
+    <ion-buttons slot="start">
+      <ion-back-button>{{item.nombre}}</ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content >
+
+  <ion-card *ngFor="let item of list; let id = index" >
+    
+    <ion-card-header>
+      
+      <ion-card class="myCard">
+        <img class="imgArtist" src={{item.linkImagen}} alt="" class="artista">
+        <div class="myOverlay">
+          <ion-text class="titleText"> {{item.nombre}}</ion-text>
+           <div class="card-subtitle">
+            <div class="interaction">
+              <div class="like">
+                <input id="toggle-heart" type="checkbox"/>
+                <label for="toggle-heart" aria-label="like">❤</label>
+              </div>
+            </div>  
+           </div>
+        </div>
+      </ion-card>
+      
+
+      <ion-card-title>
+        
+      </ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content class="textArea">
+      <p>{{item.direccion}}</p>
+      <p>{{item.contacto}}</p>
+      <a href={{item.facebook}} *ngIf="item.facebook">{{item.facebook}}</a>
+      <br *ngIf="item.facebook">
+      <a href={{item.instagram}} *ngIf="item.instagram">{{item.instagram}}</a>
+      <br *ngIf="item.instagram">
+      <a href={{item.twitter}} *ngIf="item.twitter">{{item.twitter}}</a>
+      <br *ngIf="item.twitter">
+      <a href={{item.web}} *ngIf="item.web">{{item.web}}</a>            
+    </ion-card-content>
+  </ion-card> 
+ 
+
+</ion-content>
+
+<ion-footer>
+  <div class="fondoApp">
+    <ion-toolbar>
+      <ion-tabs>
+        <ion-tab-bar>
+          <ion-tab-button>
+            <ion-menu-button>
+              <img class="logo"
+                src="https://cdn.discordapp.com/attachments/562443471659728954/1027646063911374918/LOGOSHTAROY.png">
+            </ion-menu-button>
+          </ion-tab-button>
+          <ion-tab-button [routerLink]="['/']">
+            <img src="https://cdn.discordapp.com/attachments/562443471659728954/1027646064402116739/SHATORY.png">
+          </ion-tab-button>
+          <ion-tab-button>
+            <ion-icon name="notifications-outline"></ion-icon>
+          </ion-tab-button>
+        </ion-tab-bar>
+      </ion-tabs>
+    </ion-toolbar>
+  </div>
+</ion-footer>
