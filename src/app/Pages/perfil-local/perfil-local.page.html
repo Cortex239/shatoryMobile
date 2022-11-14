@@ -37,13 +37,14 @@
     <ion-card-content class="textArea">
       <p>{{item.direccion}}</p>
       <p>{{item.contacto}}</p>
-      <a href={{item.facebook}} *ngIf="item.facebook">{{item.facebook}}</a>
-      <br *ngIf="item.facebook">
-      <a href={{item.instagram}} *ngIf="item.instagram">{{item.instagram}}</a>
-      <br *ngIf="item.instagram">
-      <a href={{item.twitter}} *ngIf="item.twitter">{{item.twitter}}</a>
-      <br *ngIf="item.twitter">
-      <a href={{item.web}} *ngIf="item.web">{{item.web}}</a>            
+      <a href={{item.facebook}} *ngIf="item.facebook"><ion-icon name="logo-facebook"></ion-icon></a>
+      
+      <a href={{item.instagram}} *ngIf="item.instagram"><ion-icon name="logo-instagram"></ion-icon></a>
+      
+      <a href={{item.twitter}} *ngIf="item.twitter"><ion-icon name="logo-twitter"></ion-icon></a>
+      
+      <a href={{item.web}} *ngIf="item.web"><ion-icon name="globe-outline"></ion-icon></a>
+                 
     </ion-card-content>
   </ion-card> 
  
