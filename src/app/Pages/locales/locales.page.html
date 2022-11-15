@@ -1,27 +1,4 @@
 <ion-header>
-  <!-- <div class="fondoApp">
-    <ion-toolbar>
-      <ion-buttons slot="start">
-        <ion-back-button></ion-back-button>
-      </ion-buttons>
-      <ion-tabs>
-        <ion-tab-bar>
-          <ion-tab-button >
-            <ion-menu-button>
-              <img class="logo"
-              src="https://cdn.discordapp.com/attachments/562443471659728954/1027646063911374918/LOGOSHTAROY.png">
-            </ion-menu-button>
-          </ion-tab-button>
-          <ion-tab-button [routerLink]="['/']">
-            <img src="https://cdn.discordapp.com/attachments/562443471659728954/1027646064402116739/SHATORY.png">
-          </ion-tab-button>
-          <ion-tab-button>
-            <ion-icon name="notifications-outline"></ion-icon>
-          </ion-tab-button>
-        </ion-tab-bar>
-      </ion-tabs>
-    </ion-toolbar>
-  </div> -->
   <ion-buttons slot="start">
     <ion-back-button></ion-back-button>
   </ion-buttons>
@@ -29,14 +6,17 @@
 
 <ion-content>
   <ion-card *ngFor="let item of list; let id = index">
-    <img class="artistImg" alt="Silhouette of mountains" src={{item.linkImagen}} />
+    <img
+      class="artistImg"
+      alt="Silhouette of mountains"
+      src="{{item.linkImagen}}"
+    />
     <ion-card-header>
-      
       <ion-card-title>{{item.nombre}}</ion-card-title>
-      
-    </ion-card-header>  
-    <ion-button fill="clear" (click)="obtenerLocal(item.idLocal)">►Más info</ion-button>
-    
+    </ion-card-header>
+    <ion-button fill="clear" (click)="obtenerLocal(item.idLocal)"
+      >►Más info</ion-button
+    >
   </ion-card>
 </ion-content>
 <ion-footer>
@@ -46,12 +26,16 @@
         <ion-tab-bar>
           <ion-tab-button>
             <ion-menu-button>
-              <img class="logo"
-                src="https://cdn.discordapp.com/attachments/562443471659728954/1027646063911374918/LOGOSHTAROY.png">
+              <img
+                class="logo"
+                src="https://cdn.discordapp.com/attachments/562443471659728954/1027646063911374918/LOGOSHTAROY.png"
+              />
             </ion-menu-button>
           </ion-tab-button>
           <ion-tab-button [routerLink]="['/']">
-            <img src="https://cdn.discordapp.com/attachments/562443471659728954/1027646064402116739/SHATORY.png">
+            <img
+              src="https://cdn.discordapp.com/attachments/562443471659728954/1027646064402116739/SHATORY.png"
+            />
           </ion-tab-button>
           <ion-tab-button>
             <ion-icon name="notifications-outline"></ion-icon>

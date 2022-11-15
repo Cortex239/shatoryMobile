@@ -1,21 +1,25 @@
-<ion-header class="ion-no-border" >
+<ion-header class="ion-no-border">
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    
   </ion-toolbar>
 </ion-header>
 <ion-content class="auth-form">
-  <img class="logo"
-              src="https://cdn.discordapp.com/attachments/562443471659728954/1027646063911374918/LOGOSHTAROY.png">
+  <img
+    class="logo"
+    src="https://cdn.discordapp.com/attachments/562443471659728954/1027646063911374918/LOGOSHTAROY.png"
+  />
   <ion-grid>
     <ion-row>
       <ion-col align-self-center>
-        <ion-button [routerLink]="['/register']" expand="block" color="success">Registrar</ion-button>
-        
+        <ion-button [routerLink]="['/register']" expand="block" color="success"
+          >Registrar</ion-button
+        >
         <span class="already"> Ya tienes una cuenta?</span>
-        <ion-button [routerLink]="['/login']" expand="block" color="danger">Iniciar Sesion</ion-button>
+        <ion-button [routerLink]="['/login']" expand="block" color="danger"
+          >Iniciar Sesion</ion-button
+        >
       </ion-col>
     </ion-row>
   </ion-grid>

@@ -25,10 +25,6 @@ const routes: Routes = [
     loadChildren: () => import('./Pages/main-menu/main-menu.module').then( m => m.MainMenuPageModule)
   },
   {
-    path: 'profile',
-    loadChildren: () => import('./Pages/profile/profile.module').then( m => m.ProfilePageModule)
-  },
-  {
     path: 'sesion',
     loadChildren: () => import('./Pages/sesion/sesion.module').then( m => m.SesionPageModule)
   },
