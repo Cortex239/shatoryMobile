@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { environment } from '../../../environments/environment';
-import { User } from 'backend/models/user';
+import { StorageService } from '../storage.service';
+import { User } from 'src/app/interfaces/user';
 import { token } from 'morgan';
 
 @Injectable({
@@ -10,7 +10,7 @@ import { token } from 'morgan';
 })
 export class UsuarioService {
 
-  constructor( private http: HttpClient) {}
+  constructor( private http: HttpClient, private storageService: StorageService) {}
 
   guardarUsuario(user){
     return this.http.post('https://shatory-backend.herokuapp.com/auth/signUp',user,{headers: {
@@ -23,9 +23,7 @@ export class UsuarioService {
   });
   };
   obtenerUsuario(tokenU: string){
-    console.log('hola');
-    return this.http.get('https://shatory-backend.herokuapp.com/auth/getProfile',{headers: {
+    return this.http.get<User>('https://shatory-backend.herokuapp.com/auth/getProfile', {headers: {
       'access-token' : tokenU}});
   };
-
 }

@@ -17,4 +17,8 @@ export class ArtistService {
   getArtistById(idArtista: number) {
     return this.http.get<Artist>(`https://shatory-backend.herokuapp.com/artists/${idArtista}`);
   }
+
+  getRandomArtists(){
+    return this.http.get<Artist[]>(`https://shatory-backend.herokuapp.com/artists/getRandom`);
+  }
 }

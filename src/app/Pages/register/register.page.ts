@@ -19,15 +19,17 @@ export class RegisterPage implements OnInit {
 
   ngOnInit() {
   }
+
   enviarUsuario(){
+
     const user: User={
       rut: this.rut,
       name: this.name,
       lastname: this.lastname,
       password: this.password,
       email: this.email
-
     };
+    
     const userJson = JSON.stringify(user);
     this.usuarioService.guardarUsuario(userJson).subscribe(async (token)  => {
       await this.guardarToken(token);

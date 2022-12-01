@@ -43,7 +43,12 @@ const routes: Routes = [
   {
     path: 'perfil-local/:id',
     loadChildren: () => import('./Pages/perfil-local/perfil-local.module').then( m => m.PerfilLocalPageModule)
+  },  {
+    path: 'perfil-usuario',
+    loadChildren: () => import('./Pages/perfil-usuario/perfil-usuario.module').then( m => m.PerfilUsuarioPageModule)
   },
+
+ 
 
 
 

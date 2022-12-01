@@ -1,58 +1,71 @@
 @font-face {
    font-family: letra;
    src: url('../../../../letra.ttf') format('truetype');
- }
- h1{
-    display: flex;
-    padding-top: 2%;
-    font-family: letra;
-    padding-left: 3%;
+}
 
- }
+h1 {
+   display: flex;
+   padding-top: 2%;
+   font-family: letra;
+   padding-left: 3%;
 
-div{
+}
+
+div {
    background-color: #2a1b3d;
 }
 
-.logo{
+.logo {
    width: 100%;
 }
 
-ion-tab-bar{
-   --background:#2a1b3d;
+ion-tab-bar {
+   --background: #2a1b3d;
 }
 
-.imag{
+.imag {
    width: 100%;
    aspect-ratio: 16/9;
    border-top-left-radius: 25px;
-    border-top-right-radius: 25px;
-    border-bottom-left-radius: 25px;
-    border-bottom-right-radius: 25px;
-    margin: 0px;
+   border-top-right-radius: 25px;
+   border-bottom-left-radius: 25px;
+   border-bottom-right-radius: 25px;
+   margin: 0px;
 }
 
-ion-card{
+ion-card {
    width: 100%;
    aspect-ratio: 1/0.8;
    --background: #a4b3b65b;
    border-top-left-radius: 25px;
-    border-top-right-radius: 25px;
-    border-bottom-left-radius: 25px;
-    border-bottom-right-radius: 25px;
-    min-height: 110vw;
-    max-height: 400px;
+   border-top-right-radius: 25px;
+   border-bottom-left-radius: 25px;
+   border-bottom-right-radius: 25px;
+   min-height: 110vw;
+   max-height: 400px;
+   display: flex;
+   flex-direction: column;
 }
 
-ion-card-content{
+ion-card-content {
    text-align: justify;
    font-size: min(4vw, 36);
 }
-ion-card-title{
+
+ion-card-title {
    font-size: min(7vw, 48px);
    font-family: letra;
 }
-ion-content{
+
+ion-content {
    margin-top: 0px !important;
    background-color: #2a1b3d;
 }
+
+ion-list {
+   overflow: hidden;
+   overflow-y: auto;
+   ::-webkit-scrollbar {
+     display: none;
+   }
+ }

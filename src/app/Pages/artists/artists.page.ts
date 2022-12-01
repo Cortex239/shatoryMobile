@@ -32,7 +32,6 @@ export class ArtistsPage implements OnInit {
     this.artistService.getArtists().subscribe(data => {
       this.loadingCtrl.dismiss();
       this.list = data;
-      console.log(data);
     });
   }
 

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Preferences } from '@capacitor/preferences';
 import { UsuarioService } from 'src/app/services/usuarios/usuario.service';
+import { StorageService } from 'src/app/services/storage.service';
 
 @Component({
   selector: 'app-login',
@@ -10,37 +11,30 @@ import { UsuarioService } from 'src/app/services/usuarios/usuario.service';
 export class LoginPage implements OnInit {
   password: string;
   email: string;
-  constructor(private usuarioService: UsuarioService) { }
+  constructor(private usuarioService: UsuarioService, private storageService: StorageService) { }
 
   ngOnInit() {
   }
-  existUser(){
-    console.log(this.email);
-    const user ={
+  existUser() {
+
+    const user = {
       email: this.email,
       password: this.password,
     };
+
     const userJson = JSON.stringify(user);
-    console.log(userJson);
-    this.usuarioService.iniciarSesion(userJson).subscribe(async (token)  => {
-      await this.guardarToken(token);
-      window.location.href='/';
+    this.usuarioService.iniciarSesion(userJson).subscribe(async (token) => {
+      console.log(token);
+    
+      await this.storageService.set('token', token);
+      window.location.href = '/';
     });
   };
 
-  guardarToken = async (token) => {
-    await Preferences.set({
-      key: 'token',
-      value: token,
-    }).then(() => {
-      console.log('El token se guardó correctamente');
-    }).catch((error) => {
-      console.log('Error al guardar el token');
-    });
-  };
+ 
 
-  valid(value: any){
-    if(value){
+  valid(value: any) {
+    if (value) {
       return true;
     }
     return false;

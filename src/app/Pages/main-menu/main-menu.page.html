@@ -1,63 +1,41 @@
+<!-- <ion-content>
+  <ion-card *ngFor="let item of list; let id = index">
+    <img
+      class="artistImg"
+      alt="Silhouette of mountains"
+      src="{{item.linkImagen}}"
+    />
+    <ion-card-header>
+      <ion-card-title>{{item.nombreArtista}}</ion-card-title>
+    </ion-card-header>
+    <ion-button fill="clear" (click)="obtenerArtista(item.idArtista)"
+      >►Más info</ion-button
+    >
+  </ion-card>
+</ion-content>
+<app-footer></app-footer> -->
 
 <ion-content>
   <div>
     <div>
-      <h1 class="nov">Novedades</h1>
+      <h1 class="nov">Descubrelos!</h1>
     </div>
     <div class="novedades">
       <ion-slides class="novedadesSlide" pager="false">
-        <ion-slide>
+        <ion-slide *ngFor="let item of list">
           <ion-card>
             <img
               class="imag"
-              src="https://robertoramasso.com/contrataciones/polima-westcoast-contrataciones.png"
+              src="{{item.linkImagen}}"
             />
             <ion-card-header>
-              <ion-card-subtitle>Artista revelación</ion-card-subtitle>
-              <ion-card-title>Polima WestCoast</ion-card-title>
+              <ion-card-title>{{item.nombreArtista}}</ion-card-title>  
             </ion-card-header>
 
             <ion-card-content>
-              Polimá Westcoast estrenó este miercoles en todas las plataformas
-              digitales su primera colaboración con el Colombiano J Balvin.
+              {{item.descripcion}}
             </ion-card-content>
-          </ion-card>
-        </ion-slide>
 
-        <ion-slide>
-          <ion-card>
-            <img
-              class="imag"
-              src="https://media.glamour.mx/photos/61907306a6e030d6480f9887/16:9/w_2800,h_1575,c_limit/220516.jpg"
-            />
-            <ion-card-header>
-              <ion-card-subtitle></ion-card-subtitle>
-              <ion-card-title>PALOMA MAMI VIÑA 2023</ion-card-title>
-            </ion-card-header>
-
-            <ion-card-content>
-              El anuncio de la participación de Paloma Mami en el Festival de
-              Viña 2023D generó una particular reacción en redes sociales, que
-              trajo el recuerdo de su paso por el programa "Rojo".
-            </ion-card-content>
-          </ion-card>
-        </ion-slide>
-
-        <ion-slide>
-          <ion-card>
-            <img
-              class="imag"
-              src="https://www.latercera.com/resizer/C82ZLLTeU1fgqOQGuuqIkA_H2SY=/157x0:1417x840/1023x682/cloudfront-us-east-1.images.arcpublishing.com/copesa/KGZ563BFBNBJHPNDRIP6VVK4BE.jpeg"
-            />
-            <ion-card-header>
-              <ion-card-title>Videoclip Na Na Na Remix </ion-card-title>
-            </ion-card-header>
-
-            <ion-card-content>
-              Pailita, Pablo Chill-E, Jordan 23 y Noriel llegaron hasta el
-              Estadio municipal de San Joaquín para realizar las grabaciones del
-              videoclip.
-            </ion-card-content>
           </ion-card>
         </ion-slide>
       </ion-slides>
