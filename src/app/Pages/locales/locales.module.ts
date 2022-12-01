@@ -8,12 +8,16 @@ import { LocalesPageRoutingModule } from './locales-routing.module';
 
 import { LocalesPage } from './locales.page';
 
+import { ComponentsModule } from 'src/app/components/components.module';
+
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    LocalesPageRoutingModule
+    LocalesPageRoutingModule,
+    ComponentsModule
   ],
   declarations: [LocalesPage]
 })

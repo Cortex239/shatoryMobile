@@ -8,12 +8,15 @@ import { PerfilLocalPageRoutingModule } from './perfil-local-routing.module';
 
 import { PerfilLocalPage } from './perfil-local.page';
 
+import { ComponentsModule } from 'src/app/components/components.module';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    PerfilLocalPageRoutingModule
+    PerfilLocalPageRoutingModule,
+    ComponentsModule
   ],
   declarations: [PerfilLocalPage]
 })

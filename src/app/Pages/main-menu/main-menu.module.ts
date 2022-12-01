@@ -9,6 +9,8 @@ import { MainMenuPageRoutingModule } from './main-menu-routing.module';
 import { MainMenuPage } from './main-menu.page';
 import { SwiperModule } from 'swiper/angular';
 
+import { ComponentsModule } from 'src/app/components/components.module';
+
 
 @NgModule({
   imports: [
@@ -17,6 +19,7 @@ import { SwiperModule } from 'swiper/angular';
     IonicModule,
     MainMenuPageRoutingModule,
     SwiperModule,
+    ComponentsModule
   ],
   declarations: [MainMenuPage,]
 })

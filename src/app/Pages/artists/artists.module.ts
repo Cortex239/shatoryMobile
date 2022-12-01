@@ -8,12 +8,15 @@ import { ArtistsPageRoutingModule } from './artists-routing.module';
 
 import { ArtistsPage } from './artists.page';
 
+import { ComponentsModule } from 'src/app/components/components.module';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ArtistsPageRoutingModule
+    ArtistsPageRoutingModule,
+    ComponentsModule
   ],
   declarations: [ArtistsPage]
 })

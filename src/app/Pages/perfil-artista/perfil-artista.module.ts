@@ -8,12 +8,15 @@ import { PerfilArtistaPageRoutingModule } from './perfil-artista-routing.module'
 
 import { PerfilArtistaPage } from './perfil-artista.page';
 
+import { ComponentsModule } from 'src/app/components/components.module';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    PerfilArtistaPageRoutingModule
+    PerfilArtistaPageRoutingModule,
+    ComponentsModule
   ],
   declarations: [PerfilArtistaPage]
 })

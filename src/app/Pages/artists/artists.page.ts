@@ -23,7 +23,7 @@ export class ArtistsPage implements OnInit {
   }
   async showLoading() {
     const loading = await this.loadingCtrl.create({
-      message: 'Dismissing after 3 seconds...',
+      message: 'Cargando...',
     });
 
     loading.present();

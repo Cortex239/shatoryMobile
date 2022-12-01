@@ -5,8 +5,6 @@ ion-tab-bar{
 
 ion-content{
     --background:#2a1b3d;
-    margin: auto;
-    text-align: center;
 }
 ion-item{
     --background:#2a1b3d;
@@ -21,10 +19,10 @@ ion-list{
 }
 ion-card{
     --background: #a4b3b65b;
-    width: 75%;
-    margin: 5% auto;
-    border-radius: 25px;     
-
+    width: 45%;
+    float:left;
+    margin: 2.4%;
+    border-radius: 25px;      
 }
 ion-card-header{
     padding-top: 0;

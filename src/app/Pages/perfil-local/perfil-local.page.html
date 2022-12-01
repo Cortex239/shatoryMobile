@@ -1,3 +1,11 @@
+<ion-header *ngFor="let item of list; let id = index">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button>{{item.nombre}}</ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
 <ion-content>
   <ion-card *ngFor="let item of list; let id = index">
     <ion-card-header>
@@ -45,29 +53,4 @@
   </ion-card>
 </ion-content>
 
-<ion-footer>
-  <div class="fondoApp">
-    <ion-toolbar>
-      <ion-tabs>
-        <ion-tab-bar>
-          <ion-tab-button>
-            <ion-menu-button>
-              <img
-                class="logo"
-                src="https://cdn.discordapp.com/attachments/562443471659728954/1027646063911374918/LOGOSHTAROY.png"
-              />
-            </ion-menu-button>
-          </ion-tab-button>
-          <ion-tab-button [routerLink]="['/']">
-            <img
-              src="https://cdn.discordapp.com/attachments/562443471659728954/1027646064402116739/SHATORY.png"
-            />
-          </ion-tab-button>
-          <ion-tab-button>
-            <ion-icon name="notifications-outline"></ion-icon>
-          </ion-tab-button>
-        </ion-tab-bar>
-      </ion-tabs>
-    </ion-toolbar>
-  </div>
-</ion-footer>
+<app-footer></app-footer>
