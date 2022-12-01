@@ -5,6 +5,21 @@
 </ion-header>
 
 <ion-content>
+  <ion-content>
+    <ion-card *ngFor="let item of list; let id = index">
+      <img
+        class="artistImg"
+        alt="Silhouette of mountains"
+        src="{{item.linkImagen}}"
+      />
+      <ion-card-header>
+        <ion-card-title>{{item.nombreArtista}}</ion-card-title>
+      </ion-card-header>
+      <ion-button fill="clear" (click)="obtenerArtista(item.idArtista)"
+        >►Más info</ion-button
+      >
+    </ion-card>
+  </ion-content>
   <ion-title color="warning" (click)="logout()">Cerrar Sesion</ion-title>
 </ion-content>
 

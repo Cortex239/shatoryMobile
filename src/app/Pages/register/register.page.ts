@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Preferences } from '@capacitor/preferences';
-import { User } from 'backend/models/user';
+import { StorageService } from 'src/app/services/storage.service'; 
+import { User } from 'src/app/interfaces/user';
 import { UsuarioService } from 'src/app/services/usuarios/usuario.service';
 
 
@@ -15,41 +15,35 @@ export class RegisterPage implements OnInit {
   lastname: string;
   password: string | undefined;
   email: string;
-  constructor(private usuarioService: UsuarioService) { }
+  constructor(private usuarioService: UsuarioService, private storageService: StorageService) { }
 
   ngOnInit() {
   }
 
-  enviarUsuario(){
+  register(){
 
     const user: User={
       rut: this.rut,
       name: this.name,
-      lastname: this.lastname,
+      lastName: this.lastname,
       password: this.password,
       email: this.email
     };
-    
+
     const userJson = JSON.stringify(user);
-    this.usuarioService.guardarUsuario(userJson).subscribe(async (token)  => {
-      await this.guardarToken(token);
-      window.location.href='/';
+    console.log(userJson);
+    
+    this.usuarioService.guardarUsuario(userJson).subscribe( (token)  => {
+      console.log(token);
+      this.storageService.set('token', token);
+      //window.location.href='/';
     });
   }
+
   valid(value: any){
     if(value){
       return true;
     }
     return false;
-  };
-  guardarToken = async (token) => {
-    await Preferences.set({
-      key: 'token',
-      value: token,
-    }).then(() => {
-      console.log('El token se guardó correctamente');
-    }).catch((error) => {
-      console.log('Error al guardar el token');
-    });
   };
 }

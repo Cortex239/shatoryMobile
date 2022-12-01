@@ -24,8 +24,6 @@ export class LoginPage implements OnInit {
 
     const userJson = JSON.stringify(user);
     this.usuarioService.iniciarSesion(userJson).subscribe(async (token) => {
-      console.log(token);
-    
       await this.storageService.set('token', token);
       window.location.href = '/';
     });

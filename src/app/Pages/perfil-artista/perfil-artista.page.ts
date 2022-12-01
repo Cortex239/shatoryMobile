@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ArtistService } from 'src/app/services/artist.service';
 import { Artist } from 'src/app/interfaces/artist';
-import { ActivatedRoute  } from '@angular/router';
-import { Preferences } from '@capacitor/preferences';
+import { ActivatedRoute } from '@angular/router';
+import { UsuarioService } from 'src/app/services/usuarios/usuario.service';
+import { StorageService } from 'src/app/services/storage.service';
+import { FavoriteService } from 'src/app/services/favorite.service';
+import { User } from 'src/app/interfaces/user';
 
 @Component({
   selector: 'app-perfil-artista',
@@ -15,30 +18,54 @@ export class PerfilArtistaPage implements OnInit {
   artist: any;
   data: any;
   vld: boolean;
-  //artistService:ArtistService;
-  constructor(private artistService: ArtistService, private activatedRouter: ActivatedRoute) {
-    this.data =this.activatedRouter.snapshot.paramMap.get('id');
+  user: User;
+
+  constructor(private artistService: ArtistService,
+    private activatedRouter: ActivatedRoute,
+    private storageService: StorageService,
+    private usuarioService: UsuarioService,
+    private favoriteService: FavoriteService) {
+
+    this.data = this.activatedRouter.snapshot.paramMap.get('id');
   }
 
   ngOnInit() {
     this.obtenerArtista(this.data);
-    this.obtenerToken();
   }
 
-  obtenerArtista(id: any){
-    console.log(id);
-    this.artistService.getArtistById(id).subscribe(data =>{
+  obtenerArtista(id: any) {
+    this.artistService.getArtistById(id).subscribe(data => {
       this.artist = data;
-      console.log(this.artist);
     });
   };
-  obtenerToken(){
-    Preferences.get({key: 'token'});
-    if(Preferences.get({key: 'token'})){
-      this.vld = true;
+
+  async checkLogin() {
+
+    let token = await this.storageService.get('token')
+
+    if (token) {
+      this.usuarioService.obtenerUsuario(token.token).subscribe(data => {
+        this.user = data;
+        this.addFavorite(this.user[0].rut, this.data);
+      });
+    }
+    else{
+      alert("Debe iniciar sesión para agregar a favoritos");
       return;
     }
-    this.vld = false;
-    return;
+  }
+
+  addFavorite(rut:string, idArtist:number){
+
+    const favoriteData = {
+      rutUser: rut,
+      idArtist: idArtist,
+    };
+
+    console.log(favoriteData);
+    
+    this.favoriteService.addFAvorite(JSON.stringify(favoriteData)).subscribe(data =>{
+      console.log(data);
+    });
   }
 }

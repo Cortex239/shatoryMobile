@@ -25,7 +25,7 @@ export class AppComponent  implements OnInit{
   user: User;
 
   ngOnInit(){
-    
+
     this.autoLogin();
   }
 
@@ -36,6 +36,7 @@ export class AppComponent  implements OnInit{
       this.vld = true;
       return
     }
+    
     this.usuarioService.obtenerUsuario(token.token).subscribe((data) => {
       this.user = data;
       this.usuarioService.iniciarSesion(this.user);

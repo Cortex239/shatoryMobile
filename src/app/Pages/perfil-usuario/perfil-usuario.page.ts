@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { StorageService } from 'src/app/services/storage.service';
+import { Artist } from 'src/app/interfaces/artist';
+import { FavoriteService } from 'src/app/services/favorite.service';
+import { UsuarioService } from 'src/app/services/usuarios/usuario.service';
+import { User } from 'src/app/interfaces/user';
+import { ArtistService } from 'src/app/services/artist.service';
 
 @Component({
   selector: 'app-perfil-usuario',
@@ -8,9 +13,35 @@ import { StorageService } from 'src/app/services/storage.service';
 })
 export class PerfilUsuarioPage implements OnInit {
 
-  constructor(private storageService: StorageService) { }
+  user: User;
+  list: Array<Artist> = [];
+
+  constructor(private storageService: StorageService, 
+    private favoriteService: FavoriteService,
+     private usuarioService: UsuarioService,
+     private artistService: ArtistService) { }
 
   ngOnInit() {
+     this.getFavoriteArtists();
+  }
+
+  obtenerArtista(id: any){
+    console.log(id);
+    this.artistService.getArtistById(id).subscribe(data =>{
+      console.log(data);
+    });
+    //this.router.navigate(['perfil-artista/'+JSON.stringify(id)]);
+  }
+
+  async getFavoriteArtists() {
+    let token = await this.storageService.get('token');
+    
+    this.usuarioService.obtenerUsuario(token.token).subscribe((data) => {
+      this.user = data;
+      this.favoriteService.getFavorites(this.user[0].rut).subscribe((data) => {
+        this.list = data;
+      })
+    });
   }
 
   async logout() {
