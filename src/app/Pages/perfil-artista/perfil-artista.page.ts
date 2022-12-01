@@ -41,29 +41,30 @@ export class PerfilArtistaPage implements OnInit {
 
   async checkLogin() {
 
-    let token = await this.storageService.get('token')
+    const token = await this.storageService.get('token');
 
     if (token) {
       this.usuarioService.obtenerUsuario(token.token).subscribe(data => {
         this.user = data;
         this.addFavorite(this.user[0].rut, this.data);
       });
+      return true;
     }
     else{
-      alert("Debe iniciar sesión para agregar a favoritos");
-      return;
+      alert('Debe iniciar sesión para agregar a favoritos');
+      return false;
     }
   }
 
-  addFavorite(rut:string, idArtist:number){
+  addFavorite(rut: string, idArtist: number){
 
     const favoriteData = {
       rutUser: rut,
+      // eslint-disable-next-line object-shorthand
       idArtist: idArtist,
     };
 
     console.log(favoriteData);
-    
     this.favoriteService.addFAvorite(JSON.stringify(favoriteData)).subscribe(data =>{
       console.log(data);
     });

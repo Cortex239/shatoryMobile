@@ -5,7 +5,7 @@
         <ion-list id="inbox-list">
           <ion-list-header><img src="https://cdn.discordapp.com/attachments/562443471659728954/1027646064402116739/SHATORY.png"></ion-list-header>
           <ion-note>shatory.support@shatory.com</ion-note>
-
+          <ion-note></ion-note>
           <ion-menu-toggle>
             <ion-item *ngIf="vld">
               <ion-icon name="play-circle-outline"></ion-icon>
@@ -13,7 +13,7 @@
             </ion-item>
             <ion-item *ngIf="!vld">
               <ion-icon name="play-circle-outline"></ion-icon>
-              <ion-title [routerLink]="['perfil-usuario']">Perfil</ion-title>
+              <ion-title [routerLink]="['perfil-usuario']">{{name}}</ion-title>
             </ion-item>
           </ion-menu-toggle>
         </ion-list>

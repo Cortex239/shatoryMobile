@@ -16,7 +16,7 @@ export class PerfilUsuarioPage implements OnInit {
   user: User;
   list: Array<Artist> = [];
 
-  constructor(private storageService: StorageService, 
+  constructor(private storageService: StorageService,
     private favoriteService: FavoriteService,
      private usuarioService: UsuarioService,
      private artistService: ArtistService) { }
@@ -34,13 +34,12 @@ export class PerfilUsuarioPage implements OnInit {
   }
 
   async getFavoriteArtists() {
-    let token = await this.storageService.get('token');
-    
+    const token = await this.storageService.get('token');
     this.usuarioService.obtenerUsuario(token.token).subscribe((data) => {
       this.user = data;
-      this.favoriteService.getFavorites(this.user[0].rut).subscribe((data) => {
-        this.list = data;
-      })
+      this.favoriteService.getFavorites(this.user[0].rut).subscribe((datau) => {
+        this.list = datau;
+      });
     });
   }
 

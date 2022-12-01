@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/member-ordering */
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { UsuarioService } from './services/usuarios/usuario.service';
@@ -23,6 +24,7 @@ export class AppComponent  implements OnInit{
   constructor(private usuarioService: UsuarioService, private storageService: StorageService) {}
 
   user: User;
+  name: string;
 
   ngOnInit(){
 
@@ -31,16 +33,17 @@ export class AppComponent  implements OnInit{
 
   async autoLogin(){
 
-    let token = await this.storageService.get('token');
+    const token = await this.storageService.get('token');
     if(!token){
-      this.vld = true;
-      return
+      this.vld = false;
+      return;
     }
-    
     this.usuarioService.obtenerUsuario(token.token).subscribe((data) => {
       this.user = data;
       this.usuarioService.iniciarSesion(this.user);
       console.log('sesion iniciada');
+      console.log(data[0].name);
+      this.name = data[0].name;
     });
   }
 }
