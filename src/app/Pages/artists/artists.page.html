@@ -12,7 +12,9 @@
       src="{{item.linkImagen}}"
     />
     <ion-card-header>
-      <ion-card-title>{{item.nombreArtista}}</ion-card-title>
+      <ion-card-title>
+        <ion-text>{{item.nombreArtista}}</ion-text>
+      </ion-card-title>
     </ion-card-header>
     <ion-button fill="clear" (click)="obtenerArtista(item.idArtista)"
       >►Más info</ion-button

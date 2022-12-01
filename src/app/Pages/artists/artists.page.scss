@@ -22,7 +22,8 @@ ion-card{
     width: 45%;
     float:left;
     margin: 2.4%;
-    border-radius: 25px;      
+    border-radius: 25px;
+    aspect-ratio: 17/15;  
 }
 ion-card-header{
     padding-top: 0;
@@ -34,7 +35,7 @@ ion-button{
     color: aqua;
 }
 ion-card-title{
-    font-size: 5vw;
+    font-size: 1.05rem;
     margin-bottom: 0;
 }
 ion-button{

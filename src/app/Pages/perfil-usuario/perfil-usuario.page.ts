@@ -5,6 +5,7 @@ import { FavoriteService } from 'src/app/services/favorite.service';
 import { UsuarioService } from 'src/app/services/usuarios/usuario.service';
 import { User } from 'src/app/interfaces/user';
 import { ArtistService } from 'src/app/services/artist.service';
+import {  Router } from '@angular/router';
 
 @Component({
   selector: 'app-perfil-usuario',
@@ -19,7 +20,8 @@ export class PerfilUsuarioPage implements OnInit {
   constructor(private storageService: StorageService,
     private favoriteService: FavoriteService,
     private usuarioService: UsuarioService,
-    private artistService: ArtistService) { }
+    private artistService: ArtistService,
+    private router: Router) { }
 
   ngOnInit() {
     this.getFavoriteArtists();
@@ -28,7 +30,7 @@ export class PerfilUsuarioPage implements OnInit {
   obtenerArtista(id: any) {
 
     this.artistService.getArtistById(id).subscribe();
-    //this.router.navigate(['perfil-artista/'+JSON.stringify(id)]);
+    this.router.navigate(['perfil-artista/'+JSON.stringify(id)]);
   }
 
   async getFavoriteArtists() {
@@ -45,5 +47,6 @@ export class PerfilUsuarioPage implements OnInit {
   async logout() {
     await this.storageService.remove('token');
     window.location.href = '/';
+
   }
 }
