@@ -13,8 +13,8 @@ export class LoginPage implements OnInit {
   email: string;
   constructor(private usuarioService: UsuarioService, private storageService: StorageService) { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
+
   existUser() {
 
     const user = {
@@ -28,8 +28,6 @@ export class LoginPage implements OnInit {
       window.location.href = '/';
     });
   };
-
- 
 
   valid(value: any) {
     if (value) {

@@ -6,6 +6,7 @@ import { UsuarioService } from 'src/app/services/usuarios/usuario.service';
 import { StorageService } from 'src/app/services/storage.service';
 import { FavoriteService } from 'src/app/services/favorite.service';
 import { User } from 'src/app/interfaces/user';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-perfil-artista',
@@ -24,7 +25,8 @@ export class PerfilArtistaPage implements OnInit {
     private activatedRouter: ActivatedRoute,
     private storageService: StorageService,
     private usuarioService: UsuarioService,
-    private favoriteService: FavoriteService) {
+    private favoriteService: FavoriteService,
+    private alertController: AlertController) {
 
     this.data = this.activatedRouter.snapshot.paramMap.get('id');
   }
@@ -51,7 +53,7 @@ export class PerfilArtistaPage implements OnInit {
       return true;
     }
     else{
-      alert('Debe iniciar sesión para agregar a favoritos');
+      this.presentAlert();
       return false;
     }
   }
@@ -60,13 +62,20 @@ export class PerfilArtistaPage implements OnInit {
 
     const favoriteData = {
       rutUser: rut,
-      // eslint-disable-next-line object-shorthand
       idArtist: idArtist,
     };
 
-    console.log(favoriteData);
-    this.favoriteService.addFAvorite(JSON.stringify(favoriteData)).subscribe(data =>{
-      console.log(data);
+    this.favoriteService.addFAvorite(JSON.stringify(favoriteData)).subscribe();
+  }
+
+  async presentAlert() {
+    const alert = await this.alertController.create({
+      header: 'Alerta',
+      subHeader: 'Mensaje importante',
+      message: 'Debes iniciar sesion para agregar a favoritos',
+      buttons: ['OK'],
     });
+
+    await alert.present();
   }
 }

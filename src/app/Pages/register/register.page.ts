@@ -31,12 +31,10 @@ export class RegisterPage implements OnInit {
     };
 
     const userJson = JSON.stringify(user);
-    console.log(userJson);
     
     this.usuarioService.guardarUsuario(userJson).subscribe( (token)  => {
-      console.log(token);
       this.storageService.set('token', token);
-      //window.location.href='/';
+      window.location.href='/';
     });
   }
 

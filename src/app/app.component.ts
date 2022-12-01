@@ -41,8 +41,6 @@ export class AppComponent  implements OnInit{
     this.usuarioService.obtenerUsuario(token.token).subscribe((data) => {
       this.user = data;
       this.usuarioService.iniciarSesion(this.user);
-      console.log('sesion iniciada');
-      console.log(data[0].name);
       this.name = data[0].name;
     });
   }

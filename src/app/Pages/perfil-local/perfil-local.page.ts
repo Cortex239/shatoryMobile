@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LocaService } from 'src/app/services/local/loca.service';
 import { Local } from 'src/app/interfaces/local';
-import { ActivatedRoute  } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-perfil-local',
@@ -14,20 +14,16 @@ export class PerfilLocalPage implements OnInit {
   data: any;
   localForm: any;
   constructor(private activatedRouter: ActivatedRoute, private localesService: LocaService) {
-    this.data =this.activatedRouter.snapshot.paramMap.get('id');
+    this.data = this.activatedRouter.snapshot.paramMap.get('id');
   }
 
   ngOnInit() {
     this.obtenerArtista(this.data);
   }
 
-  obtenerArtista(id: any){
-    console.log(id);
-    this.localesService.getLocalsByName(id).subscribe(data =>{
+  obtenerArtista(id: any) {
+    this.localesService.getLocalsByName(id).subscribe(data => {
       this.list[0] = data;
-      console.log(this.list);
-
-      console.log('flag');
     });
   }
 }

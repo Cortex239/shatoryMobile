@@ -19,7 +19,7 @@ export class FavoriteService {
     });
   }
 
-  getFavorites(rut: number) {
-    return this.http.get<Artist[]>(`https://shatory-backend.herokuapp.com/favorites/getFavorites/${rut}`);
+  getFavorites(rut: string) {
+    return this.http.get<Artist[]>(`https://shatory-backend.herokuapp.com/favorites/getFavorite/${rut}`);
   }
 }

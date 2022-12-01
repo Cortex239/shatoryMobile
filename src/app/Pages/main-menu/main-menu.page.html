@@ -1,20 +1,3 @@
-<!-- <ion-content>
-  <ion-card *ngFor="let item of list; let id = index">
-    <img
-      class="artistImg"
-      alt="Silhouette of mountains"
-      src="{{item.linkImagen}}"
-    />
-    <ion-card-header>
-      <ion-card-title>{{item.nombreArtista}}</ion-card-title>
-    </ion-card-header>
-    <ion-button fill="clear" (click)="obtenerArtista(item.idArtista)"
-      >►Más info</ion-button
-    >
-  </ion-card>
-</ion-content>
-<app-footer></app-footer> -->
-
 <ion-content>
   <div>
     <div>
@@ -24,18 +7,12 @@
       <ion-slides class="novedadesSlide" pager="false">
         <ion-slide *ngFor="let item of list">
           <ion-card>
-            <img
-              class="imag"
-              src="{{item.linkImagen}}"
-            />
+            <img class="imag" src="{{item.linkImagen}}" />
             <ion-card-header>
-              <ion-card-title>{{item.nombreArtista}}</ion-card-title>  
+              <ion-card-title>{{item.nombreArtista}}</ion-card-title>
             </ion-card-header>
 
-            <ion-card-content>
-              {{item.descripcion}}
-            </ion-card-content>
-
+            <ion-card-content> {{item.descripcion}} </ion-card-content>
           </ion-card>
         </ion-slide>
       </ion-slides>

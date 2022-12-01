@@ -36,10 +36,7 @@ export class ArtistsPage implements OnInit {
   }
 
   obtenerArtista(id: any){
-    console.log(id);
-    this.artistService.getArtistById(id).subscribe(data =>{
-      console.log(data);
-    });
+    this.artistService.getArtistById(id).subscribe();
     this.router.navigate(['perfil-artista/'+JSON.stringify(id)]);
   }
 }

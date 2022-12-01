@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LocaService } from 'src/app/services/local/loca.service';
 import { Local } from 'src/app/interfaces/local';
-import {  Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { LoadingController } from '@ionic/angular';
 
@@ -13,12 +13,13 @@ import { LoadingController } from '@ionic/angular';
 export class LocalesPage implements OnInit {
 
   list: Array<Local> = [];
-  //artistService:ArtistService;
-  constructor(private localesService: LocaService,private router: Router, private loadingCtrl: LoadingController) { }
+
+  constructor(private localesService: LocaService, private router: Router, private loadingCtrl: LoadingController) { }
 
   ngOnInit() {
     this.getLocals();
   }
+
   async showLoading() {
     const loading = await this.loadingCtrl.create({
       message: 'Cargando...',
@@ -26,13 +27,14 @@ export class LocalesPage implements OnInit {
 
     loading.present();
   };
+
   getLocals() {
     this.localesService.getLocals().subscribe(data => {
       this.list = data;
-      console.log(data);
     });
   }
-  obtenerLocal(id: any){
-    this.router.navigate(['perfil-local/'+JSON.stringify(id)]);
+
+  obtenerLocal(id: any) {
+    this.router.navigate(['perfil-local/' + JSON.stringify(id)]);
   }
 }
