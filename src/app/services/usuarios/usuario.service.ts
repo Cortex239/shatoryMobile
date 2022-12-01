@@ -10,13 +10,15 @@ import { User } from 'backend/models/user';
 export class UsuarioService {
 
   constructor( private http: HttpClient) {}
-  async guardarUsuario(user){
-    return await fetch('https://shatory-backend.herokuapp.com/auth/signUp',{
-      method: 'POST',
-      headers: {
-        'Content-Type' : 'application/json'
-      },
-      body: user
+
+  guardarUsuario(user){
+    return this.http.post('https://shatory-backend.herokuapp.com/auth/signUp',user,{headers: {
+          'Content-Type' : 'application/json'}
+    });
+  }
+  iniciarSesion(usermp){
+    return this.http.post('https://shatory-backend.herokuapp.com/auth/signIn',usermp,{headers: {
+      'Content-Type' : 'application/json'}
   });
   }
 }

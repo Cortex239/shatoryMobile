@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Preferences } from '@capacitor/preferences';
 import { User } from 'backend/models/user';
 import { UsuarioService } from 'src/app/services/usuarios/usuario.service';
+
 
 @Component({
   selector: 'app-register',
@@ -27,7 +29,25 @@ export class RegisterPage implements OnInit {
 
     };
     const userJson = JSON.stringify(user);
-    console.log(userJson);
-    this.usuarioService.guardarUsuario(userJson);
+    this.usuarioService.guardarUsuario(userJson).subscribe(async (token)  => {
+      await this.guardarToken(token);
+      window.location.href='/';
+    });
   }
+  valid(value: any){
+    if(value){
+      return true;
+    }
+    return false;
+  };
+  guardarToken = async (token) => {
+    await Preferences.set({
+      key: 'token',
+      value: token,
+    }).then(() => {
+      console.log('El token se guardó correctamente');
+    }).catch((error) => {
+      console.log('Error al guardar el token');
+    });
+  };
 }

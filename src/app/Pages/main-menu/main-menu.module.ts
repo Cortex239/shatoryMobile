@@ -9,14 +9,15 @@ import { MainMenuPageRoutingModule } from './main-menu-routing.module';
 import { MainMenuPage } from './main-menu.page';
 import { SwiperModule } from 'swiper/angular';
 
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
     MainMenuPageRoutingModule,
-    SwiperModule
+    SwiperModule,
   ],
-  declarations: [MainMenuPage]
+  declarations: [MainMenuPage,]
 })
 export class MainMenuPageModule {}
