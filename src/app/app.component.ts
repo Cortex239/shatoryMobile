@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Preferences } from '@capacitor/preferences';
 import { token } from 'morgan';
+import { Subscription } from 'rxjs';
+import { UsuarioService } from './services/usuarios/usuario.service';
 
 @Component({
   selector: 'app-root',
@@ -18,17 +20,30 @@ export class AppComponent  implements OnInit{
   ];
   public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
   vld: boolean;
-  constructor() {}
+  constructor(private usuarioService: UsuarioService) {}
+
   ngOnInit(){
     this.obtenerToken();
   }
-  obtenerToken(){
-    Preferences.get({key: 'token'});
-    if(Preferences.get({key: 'token'})){
-      this.vld = true;
-      return;
-    }
-    this.vld = false;
-    return;
+
+  async obtenerToken(){
+
+    const ret = await Preferences.get({ key: 'token' });
+    const tokenU = ret.value;
+
+    console.log(ret);
+    // this.verNombre(Preferences.get({key: 'token'}));
+
+
+  //   if(Preferences.get({key: 'token'})){
+  //     this.vld = true;
+  //     return;
+  //   }
+  //   this.vld = false;
+  //   return;
+  };
+
+  verNombre(tokenu){
+    this.usuarioService.obtenerUsuario(tokenu).subscribe();
   }
 }

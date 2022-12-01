@@ -27,6 +27,7 @@ export class LoginPage implements OnInit {
       window.location.href='/';
     });
   };
+
   guardarToken = async (token) => {
     await Preferences.set({
       key: 'token',
