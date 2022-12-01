@@ -27,7 +27,6 @@ export class AppComponent  implements OnInit{
   name: string;
 
   ngOnInit(){
-
     this.autoLogin();
   }
 
@@ -35,7 +34,8 @@ export class AppComponent  implements OnInit{
 
     const token = await this.storageService.get('token');
     if(!token){
-      this.vld = false;
+      console.log('No hay token');
+      this.vld = true;
       return;
     }
     this.usuarioService.obtenerUsuario(token.token).subscribe((data) => {
