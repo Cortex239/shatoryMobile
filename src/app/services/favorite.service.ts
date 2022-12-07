@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
-import { Artist } from 'backend/models/artist';
+import { Artist } from '../interfaces/artist';
 
 
 @Injectable({
@@ -30,6 +30,6 @@ export class FavoriteService {
   deleteFavorite(rut: string, idArtist: number) {
     console.log("a");
     
-    return this.http.delete(`https://shatory-backend.herokuapp.com/favorites/getFavorite/${rut}/${idArtist}`);
+    return this.http.delete(`https://shatory-backend.herokuapp.com/favorites/deleteFavorite/${rut}/${idArtist}`);
   }
 }
