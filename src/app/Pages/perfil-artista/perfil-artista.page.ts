@@ -18,7 +18,7 @@ export class PerfilArtistaPage implements OnInit {
   list: Array<Artist> = [];
   artist: any;
   data: any;
-  vld: boolean;
+  favorite: boolean;
   user: User;
 
   constructor(private artistService: ArtistService,
@@ -33,6 +33,7 @@ export class PerfilArtistaPage implements OnInit {
 
   ngOnInit() {
     this.obtenerArtista(this.data);
+    this.checkFavorite(this.data);
   }
 
   obtenerArtista(id: any) {
@@ -77,5 +78,35 @@ export class PerfilArtistaPage implements OnInit {
     });
 
     await alert.present();
+  }
+
+  async checkFavorite(idArtist: number){
+    const token = await this.storageService.get('token');
+    console.log("hola");
+    
+    if (token) {
+      this.usuarioService.obtenerUsuario(token.token).subscribe(data => {
+        this.user = data;
+        this.favoriteService.checkFavorite(this.user[0].rut, idArtist).subscribe(data => {
+          if(data){
+            this.favorite = true;
+          }
+          else{
+            this.favorite = false;
+          }
+        });
+      });
+    }
+  }
+
+  async dltFavorite(idArtist: number){
+    const token = await this.storageService.get('token');
+
+    if (token) {
+      this.usuarioService.obtenerUsuario(token.token).subscribe(data => {
+        this.user = data;
+        this.favoriteService.deleteFavorite(this.user[0].rut, idArtist).subscribe();
+      });
+    }
   }
 }

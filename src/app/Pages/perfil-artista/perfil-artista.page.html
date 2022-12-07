@@ -22,7 +22,8 @@
             <div class="interaction">
               <div class="like">
                 <input id="toggle-heart" type="checkbox" />
-                <label for="toggle-heart" aria-label="like" (click)="checkLogin()">❤</label>
+                <label id="active" *ngIf="favorite" for="toggle-heart" aria-label="like" (click)="dltFavorite(id)">❤</label>
+                <label *ngIf="!favorite" for="toggle-heart" aria-label="like" (click)="checkLogin()">❤</label>
               </div>
             </div>
           </div>
