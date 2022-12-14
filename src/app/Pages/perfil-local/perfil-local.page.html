@@ -50,6 +50,18 @@
       ></a>
     </ion-card-content>
   </ion-card>
+
+  <ion-card *ngFor="let item of eventos; let id = index">
+    <ion-card-content *ngIf="verifIdLocal(item.idLoc)">
+        <ion-item>
+          <ion-thumbnail slot="start">
+            <img src="{{item.imagenEvento}}" />
+          </ion-thumbnail>
+          <ion-label>{{item.nombreEvento}}</ion-label>
+          <ion-card-subtitle>{{item.fecha}}</ion-card-subtitle>
+        </ion-item>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
 
 <app-footer></app-footer>

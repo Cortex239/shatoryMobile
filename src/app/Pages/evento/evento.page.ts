@@ -18,12 +18,14 @@ export class EventoPage implements OnInit {
   hour: string;
   listLocales: Array<any> = [];
   artist: any;
+  
   // eslint-disable-next-line max-len
   constructor(private activatedRouter: ActivatedRoute, private eventoService: EventoService, private router: Router, private localesService: LocaService , private artistService: ArtistService) {
     this.data = this.activatedRouter.snapshot.paramMap.get('id');
    }
 
   ngOnInit(){
+    
     this.obternerEvento(this.data);
   }
   obternerEvento(id: any){
@@ -72,4 +74,5 @@ export class EventoPage implements OnInit {
       console.log(this.artist);
     });
   };
+  
 }

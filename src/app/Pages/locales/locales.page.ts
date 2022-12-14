@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { LoadingController } from '@ionic/angular';
 
+
 @Component({
   selector: 'app-locales',
   templateUrl: './locales.page.html',

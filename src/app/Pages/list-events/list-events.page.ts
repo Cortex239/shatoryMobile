@@ -12,9 +12,11 @@ import { ArtistService } from 'src/app/services/artist.service';
 export class ListEventsPage implements OnInit {
   list: Array<Evento> = [];
 
+
   constructor(private eventoService: EventoService, private router: Router,private artistService: ArtistService) { }
 
   ngOnInit() {
+    
     this.getEvent();
   }
   getEvent(){
@@ -45,6 +47,21 @@ export class ListEventsPage implements OnInit {
       // const seconds = date.getSeconds();
       // this.list[i].date = day + '/' + month + '/' + year + ' ' + hour + ':' + minutes + ':' + seconds;
       this.list[i].fecha = day + '/' + month + '/' + year;
+    }
+    this.verificarEventos();
+  }
+  verificarEventos(){
+
+    const hoy = new Date;
+    const fechaActual = new Date (hoy);
+    let i;
+    for (i = 0 ; i < this.list.length ; i++){
+      const fechaEvento = new Date(this.list[i].fecha);
+      console.log(fechaEvento, fechaActual, this.list[i].fecha);
+      
+      if (fechaEvento < fechaActual){
+        console.log("afs");
+      }
     }
   }
 }

@@ -3,48 +3,6 @@
     <ion-back-button></ion-back-button>
   </ion-buttons>
 </ion-header>
-
-<!-- <ion-content>
-  <ion-card *ngFor="let item of list; let id = index">
-    <ion-card-header>
-      
-      <ion-card-title>
-        <ion-text>{{item.nombreEvento}}</ion-text>
-        <br>
-        <ion-text>{{item.fecha}}</ion-text>
-        <br>
-        <ion-text>${{item.precio}}</ion-text>
-      </ion-card-title>
-    </ion-card-header>
-
-    <ion-button fill="clear" (click)="obtenerEvento(item.idEvento)"
-    >Mas Info</ion-button>
-  </ion-card>
-</ion-content> -->
-  <!-- <ion-card *ngFor="let item of list; let id = index">
-    <ion-card-header>
-      <ion-card class="myCard">
-        <img
-          class="imgArtist"
-          src="{{item.imagenEvento}}"
-          alt=""
-          class="artista"
-        />
-        <div class="myOverlay">
-          <ion-text class="titleText"> {{item.nombreEvento}}</ion-text>
-        </div>
-      </ion-card>
-    </ion-card-header>
-
-    <ion-card-content class="textArea">
-      <p>{{item.fecha}}</p>
-      
-      <p>{{item.precio}}</p>
-
-    </ion-card-content>
-    <ion-button fill="clear" (click)="obtenerEvento(item.idEvento)"
-    >Mas Info</ion-button>
-  </ion-card> -->
   <ion-content>
     <ion-card *ngFor="let item of list; let id = index">
       <img

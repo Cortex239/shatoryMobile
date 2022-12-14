@@ -81,6 +81,7 @@
   }
   ion-item{
     --background:#2a1b3d;
+    box-shadow: none !important;
   }
 
   a{
@@ -97,4 +98,10 @@
     float: right;
     font-size:8vw;
     margin: 1.5%;
+  }
+  ion-list{
+    box-shadow: none !important;
+    --background:#2a1b3d !important;
+    --color:#2a1b3d; 
+    
   }
