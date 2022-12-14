@@ -20,15 +20,15 @@
           <ion-text class="titleText"> {{item.nombreArtista}}</ion-text>
           <div class="card-subtitle">
             <div class="like">
-              <label id="heart" *ngIf="{isLoged}" (click)="changesHeart()">❤</label>
-              <label id="heart" *ngIf="!{isLoged}" disabled (click)="presentAlert()">❤</label>
+              <label id="heart" *ngIf="isLogedReturn()" (click)="changesHeart()">❤</label>
+              <label id="heart" *ngIf="!isLogedReturn()" disabled (click)="presentAlert()">❤</label>
             </div>
           </div>
         </div>
       </ion-card>
     </ion-card-header>
     <ion-card-content class="textArea"> {{item.descripcion}} </ion-card-content>
-    <ion-button (click)="eliminarArtista(item.idArtista)">Eliminar</ion-button>
+    <ion-button *ngIf="isAdminReturn()" (click)="eliminarArtista(item.idArtista)">Eliminar</ion-button>
   </ion-card>
   
 </ion-content>

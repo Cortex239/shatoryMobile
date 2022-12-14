@@ -15,4 +15,7 @@ export class EventoService {
   getEventsById(idEvento: number){
     return this.http.get<Evento>(`https://shatory-backend.herokuapp.com/eventos/getEvento/${idEvento}`);
   }
+  deleteEvent(id: number){
+    return this.http.delete(`https://shatory-backend.herokuapp.com/eventos/deleteEvento/${id}`);
+  }
 }

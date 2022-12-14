@@ -11,12 +11,12 @@ import { ArtistService } from 'src/app/services/artist.service';
 })
 export class ListEventsPage implements OnInit {
   list: Array<Evento> = [];
+  fechasEv: Array<Date> = [];
 
 
   constructor(private eventoService: EventoService, private router: Router,private artistService: ArtistService) { }
 
   ngOnInit() {
-    
     this.getEvent();
   }
   getEvent(){
@@ -39,28 +39,25 @@ export class ListEventsPage implements OnInit {
     let i;
     for( i =0; i < this.list.length ; i++){
       const date = new Date(this.list[i].fecha);
+      this.fechasEv.push(date);
       const day = date.getDate();
       const month = date.getMonth();
       const year = date.getFullYear();
-      // const hour = date.getHours();
-      // const minutes = date.getMinutes();
-      // const seconds = date.getSeconds();
-      // this.list[i].date = day + '/' + month + '/' + year + ' ' + hour + ':' + minutes + ':' + seconds;
       this.list[i].fecha = day + '/' + month + '/' + year;
     }
     this.verificarEventos();
   }
   verificarEventos(){
 
-    const hoy = new Date;
-    const fechaActual = new Date (hoy);
+    const hoy = new Date();
     let i;
-    for (i = 0 ; i < this.list.length ; i++){
-      const fechaEvento = new Date(this.list[i].fecha);
-      console.log(fechaEvento, fechaActual, this.list[i].fecha);
-      
-      if (fechaEvento < fechaActual){
-        console.log("afs");
+    for (i = 0 ; i < this.fechasEv.length ; i++){
+      const fechaEvento = new Date(this.fechasEv[i]);
+      console.log(fechaEvento);
+      if (fechaEvento < hoy){
+        this.eventoService.deleteEvent(this.list[i].idEvento).subscribe(data => {
+          console.log(data);
+        });
       }
     }
   }

@@ -35,9 +35,11 @@ export class PerfilArtistaPage implements OnInit {
   }
 
   ngOnInit() {
+    this.isLoged = false;
     this.checkLogin();
     this.obtenerArtista(this.data);
     this.checkFavorite(this.data);
+    console.log(this.isLoged);
   }
 
   obtenerArtista(id: any) {
@@ -64,7 +66,6 @@ export class PerfilArtistaPage implements OnInit {
       });
     }
     else{
-      this.presentAlert();
       this.isLoged = false;
     }
   }
@@ -141,5 +142,10 @@ export class PerfilArtistaPage implements OnInit {
       window.location.href='artists';
     });
   }
-
+  isLogedReturn(){
+    return this.isLoged;
+  }
+  isAdminReturn(){
+    return this.isAdmin;
+  }
 }
