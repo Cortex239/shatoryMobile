@@ -11,7 +11,11 @@
               <ion-icon name="play-circle-outline"></ion-icon>
               <ion-title [routerLink]="['sesion']">Iniciar Sesion</ion-title>
             </ion-item>
-            <ion-item *ngIf="!vld">
+            <ion-item *ngIf="!vld && isAdmin===1">
+              <ion-icon name="play-circle-outline"></ion-icon>
+              <ion-title [routerLink]="['admin']">{{name}}</ion-title>
+            </ion-item>
+            <ion-item *ngIf="!vld && isAdmin===0">
               <ion-icon name="play-circle-outline"></ion-icon>
               <ion-title [routerLink]="['perfil-usuario']">{{name}}</ion-title>
             </ion-item>

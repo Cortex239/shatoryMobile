@@ -21,6 +21,8 @@ export class PerfilArtistaPage implements OnInit {
   favorite: boolean;
   user: User;
   isLoged: boolean;
+  isAdmin: boolean;
+  router: any;
 
   constructor(private artistService: ArtistService,
     private activatedRouter: ActivatedRoute,
@@ -52,9 +54,14 @@ export class PerfilArtistaPage implements OnInit {
     if (token) {
       this.usuarioService.obtenerUsuario(token.token).subscribe(data => {
         this.user = data;
-        this.addFavorite(this.user[0].rut, this.data);
+        if(this.user[0].rol === 1){
+          this.isAdmin = true;
+        }
+        else{
+          this.isAdmin = false;
+        }
+        this.isLoged = true;
       });
-      this.isLoged = true;
     }
     else{
       this.presentAlert();
@@ -127,6 +134,12 @@ export class PerfilArtistaPage implements OnInit {
       await this.dltFavorite(this.data);
       this.favorite = false;
     }
+  }
+  eliminarArtista(id: number){
+    this.artistService.deleteArtist(id).subscribe(data => {
+      console.log(data);
+      window.location.href='artists';
+    });
   }
 
 }

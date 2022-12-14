@@ -15,10 +15,13 @@ export class ArtistService {
   }
 
   getArtistById(idArtista: number) {
-    return this.http.get<Artist>(`https://shatory-backend.herokuapp.com/artists/${idArtista}`);
+    return this.http.get<Artist>(`https://shatory-backend.herokuapp.com/artists/getArtistById/${idArtista}`);
   }
 
   getRandomArtists(){
     return this.http.get<Artist[]>(`https://shatory-backend.herokuapp.com/artists/getRandom`);
+  }
+  deleteArtist(id: number){
+    return this.http.delete(`https://shatory-backend.herokuapp.com/artists/deleteArtistById/${id}`);
   }
 }

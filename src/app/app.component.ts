@@ -25,6 +25,7 @@ export class AppComponent  implements OnInit{
 
   user: User;
   name: string;
+  isAdmin: number;
 
   ngOnInit(){
     this.autoLogin();
@@ -42,6 +43,7 @@ export class AppComponent  implements OnInit{
       this.user = data;
       this.usuarioService.iniciarSesion(this.user);
       this.name = data[0].name;
+      this.isAdmin = data[0].rol;
     });
   }
 }

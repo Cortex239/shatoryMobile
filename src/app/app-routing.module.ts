@@ -55,9 +55,13 @@ const routes: Routes = [
   {
     path: 'evento/:id',
     loadChildren: () => import('./Pages/evento/evento.module').then( m => m.EventoPageModule)
+  },  {
+    path: 'admin',
+    loadChildren: () => import('./Pages/admin/admin.module').then( m => m.AdminPageModule)
   },
 
- 
+
+
 
 
 
