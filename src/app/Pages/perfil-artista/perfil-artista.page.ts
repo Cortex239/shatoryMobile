@@ -128,4 +128,5 @@ export class PerfilArtistaPage implements OnInit {
       this.favorite = false;
     }
   }
+
 }

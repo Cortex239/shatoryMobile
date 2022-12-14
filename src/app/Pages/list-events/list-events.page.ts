@@ -20,6 +20,7 @@ export class ListEventsPage implements OnInit {
   getEvent(){
     this.eventoService.getEvents().subscribe(data =>{
       this.list = data;
+      this.changesDate();
     });
   }
   obtenerArtista(id: any){
@@ -31,5 +32,19 @@ export class ListEventsPage implements OnInit {
   }
   obtenerEvento(id: any){
     this.router.navigate(['evento/' + JSON.stringify(id)]);
+  }
+  changesDate(){
+    let i;
+    for( i =0; i < this.list.length ; i++){
+      const date = new Date(this.list[i].fecha);
+      const day = date.getDate();
+      const month = date.getMonth();
+      const year = date.getFullYear();
+      // const hour = date.getHours();
+      // const minutes = date.getMinutes();
+      // const seconds = date.getSeconds();
+      // this.list[i].date = day + '/' + month + '/' + year + ' ' + hour + ':' + minutes + ':' + seconds;
+      this.list[i].fecha = day + '/' + month + '/' + year;
+    }
   }
 }

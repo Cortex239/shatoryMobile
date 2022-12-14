@@ -21,7 +21,7 @@
           <div class="card-subtitle">
             <div class="like">
               <label id="heart" *ngIf="!{isLoged}" (click)="changesHeart()">❤</label>
-              <label id="heart" *ngIf="{isLoged}" disabled >❤</label>
+              <label id="heart" *ngIf="{isLoged}" disabled (click)="presentAlert()">❤</label>
             </div>
           </div>
         </div>

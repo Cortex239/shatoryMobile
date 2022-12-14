@@ -7,20 +7,15 @@
 <ion-content>
   <ion-card *ngFor="let item of list; let id = index">
     <ion-card-header>
+      
       <ion-card-title>
         <ion-text>{{item.nombreEvento}}</ion-text>
         <br>
         <ion-text>{{item.fecha}}</ion-text>
         <br>
-        <ion-text>{{item.precio}}</ion-text>
+        <ion-text>${{item.precio}}</ion-text>
       </ion-card-title>
     </ion-card-header>
-
-    <ion-button fill="clear" (click)="obtenerArtista(item.idArt)"
-      >►Artista</ion-button>
-
-    <ion-button fill="clear" (click)="obtenerLocal(item.idLoc)"
-    >►Local</ion-button>
 
     <ion-button fill="clear" (click)="obtenerEvento(item.idEvento)"
     >Mas Info</ion-button>
