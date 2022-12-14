@@ -19,12 +19,9 @@
         <div class="myOverlay">
           <ion-text class="titleText"> {{item.nombreArtista}}</ion-text>
           <div class="card-subtitle">
-            <div class="interaction">
-              <div class="like">
-                <input id="toggle-heart" type="checkbox" />
-                <label id="active" *ngIf="favorite" for="toggle-heart" aria-label="like" (click)="dltFavorite(id)">❤</label>
-                <label *ngIf="!favorite" for="toggle-heart" aria-label="like" (click)="checkLogin()">❤</label>
-              </div>
+            <div class="like">
+              <label id="heart" *ngIf="!{isLoged}" (click)="changesHeart()">❤</label>
+              <label id="heart" *ngIf="{isLoged}" disabled >❤</label>
             </div>
           </div>
         </div>

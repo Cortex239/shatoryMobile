@@ -10,10 +10,12 @@ import { Artist } from '../interfaces/artist';
 export class FavoriteService {
 
   constructor(private http: HttpClient) { }
+  // eslint-disable-next-line @typescript-eslint/member-ordering
   url = environment.API_URL;
   addFAvorite(favorite: any) {
     return this.http.post(`https://shatory-backend.herokuapp.com/favorites/addFavorite`, favorite, {
       headers: {
+        // eslint-disable-next-line @typescript-eslint/naming-convention
         'Content-Type': 'application/json'
       }
     });
@@ -28,8 +30,6 @@ export class FavoriteService {
   }
 
   deleteFavorite(rut: string, idArtist: number) {
-    console.log("a");
-    
     return this.http.delete(`https://shatory-backend.herokuapp.com/favorites/deleteFavorite/${rut}/${idArtist}`);
   }
 }

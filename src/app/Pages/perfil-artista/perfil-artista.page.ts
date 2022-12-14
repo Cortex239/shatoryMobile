@@ -20,6 +20,7 @@ export class PerfilArtistaPage implements OnInit {
   data: any;
   favorite: boolean;
   user: User;
+  isLoged: boolean;
 
   constructor(private artistService: ArtistService,
     private activatedRouter: ActivatedRoute,
@@ -32,8 +33,9 @@ export class PerfilArtistaPage implements OnInit {
   }
 
   ngOnInit() {
+    this.checkLogin();
     this.obtenerArtista(this.data);
-    // this.checkFavorite(this.data);
+    this.checkFavorite(this.data);
   }
 
   obtenerArtista(id: any) {
@@ -52,15 +54,15 @@ export class PerfilArtistaPage implements OnInit {
         this.user = data;
         this.addFavorite(this.user[0].rut, this.data);
       });
-      return true;
+      this.isLoged = true;
     }
     else{
       this.presentAlert();
-      return false;
+      this.isLoged = false;
     }
   }
 
-  addFavorite(rut: string, idArtist: number){
+  async addFavorite(rut: string, idArtist: number){
 
     const favoriteData = {
       rutUser: rut,
@@ -90,9 +92,11 @@ export class PerfilArtistaPage implements OnInit {
         this.favoriteService.checkFavorite(this.user[0].rut, idArtist).subscribe(data2 => {
           if(data2){
             this.favorite = true;
+            document.getElementById('heart').style.color = 'red';
           }
           else{
             this.favorite = false;
+            document.getElementById('heart').style.color = 'white';
           }
         });
       });
@@ -105,8 +109,23 @@ export class PerfilArtistaPage implements OnInit {
     if (token) {
       this.usuarioService.obtenerUsuario(token.token).subscribe(data => {
         this.user = data;
-        this.favoriteService.deleteFavorite(this.user[0].rut, idArtist).subscribe();
+        this.favoriteService.deleteFavorite(this.user[0].rut, idArtist).subscribe( data2 => {
+          console.log(data2);
+        });
       });
+    }
+  }
+
+  async changesHeart(){
+    if(!this.favorite){
+      document.getElementById('heart').style.color = 'red';
+      await this.addFavorite(this.user[0].rut, this.data);
+      this.favorite = true;
+    }
+    else{
+      document.getElementById('heart').style.color = 'white';
+      await this.dltFavorite(this.data);
+      this.favorite = false;
     }
   }
 }

@@ -34,7 +34,7 @@ export class PerfilUsuarioPage implements OnInit {
   }
 
   async getFavoriteArtists() {
-    
+
     const token = await this.storageService.get('token');
     this.usuarioService.obtenerUsuario(token.token).subscribe((data) => {
       this.user = data;
