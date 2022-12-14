@@ -43,9 +43,18 @@ const routes: Routes = [
   {
     path: 'perfil-local/:id',
     loadChildren: () => import('./Pages/perfil-local/perfil-local.module').then( m => m.PerfilLocalPageModule)
-  },  {
+  },
+  {
     path: 'perfil-usuario',
     loadChildren: () => import('./Pages/perfil-usuario/perfil-usuario.module').then( m => m.PerfilUsuarioPageModule)
+  },
+  {
+    path: 'list-events',
+    loadChildren: () => import('./Pages/list-events/list-events.module').then( m => m.ListEventsPageModule)
+  },
+  {
+    path: 'evento/:id',
+    loadChildren: () => import('./Pages/evento/evento.module').then( m => m.EventoPageModule)
   },
 
  

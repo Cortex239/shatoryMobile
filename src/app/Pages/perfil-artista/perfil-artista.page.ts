@@ -33,7 +33,7 @@ export class PerfilArtistaPage implements OnInit {
 
   ngOnInit() {
     this.obtenerArtista(this.data);
-    this.checkFavorite(this.data);
+    // this.checkFavorite(this.data);
   }
 
   obtenerArtista(id: any) {

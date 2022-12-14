@@ -1,0 +1,25 @@
+<ion-header *ngFor="let item of evento; let id = index">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button>{{item.nombreEvento}}</ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let item of evento; let id = index">
+    <ion-card-header>
+      <ion-card class="myCard">
+        <div class="myOverlay">
+          <ion-text class="titleText"> {{item.nombreEvento}}</ion-text>
+          <ion-text > {{item.fecha}}</ion-text>
+          <ion-text > {{item.precio}}</ion-text>         
+          
+        </div>
+      </ion-card>
+    </ion-card-header>
+
+  </ion-card>
+</ion-content>
+
+<app-footer></app-footer>

@@ -1,0 +1,47 @@
+ion-tab-bar{
+    --background:#2a1b3d;
+
+}
+
+ion-content{
+    --background:#2a1b3d;
+    margin: auto;
+    text-align: center;
+}
+ion-item{
+    --background:#2a1b3d;
+}
+ion-list{
+    background:#2a1b3d;
+}
+.artistImg{
+    margin: 0;
+    width: 100%;
+    aspect-ratio: 17/10;
+}
+ion-card{
+    --background: #a4b3b65b;
+    width: 75%;
+    margin: 5% auto;
+    border-radius: 25px;     
+
+}
+ion-card-header{
+    padding-top: 0;
+    padding-left: 3%;
+    padding-bottom: 3%;
+    
+}
+ion-button{
+    color: aqua;
+}
+ion-card-title{
+    font-size: 5vw;
+    margin-bottom: 0;
+}
+ion-button{
+    font-size: min(3vw, 19px);
+    margin-top: 0;
+    padding-top: 0;
+    
+}
