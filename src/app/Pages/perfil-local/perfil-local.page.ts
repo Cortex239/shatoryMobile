@@ -21,10 +21,10 @@ export class PerfilLocalPage implements OnInit {
 
   ngOnInit() {
     this.isRed = true;
-    this.obtenerArtista(this.data);
+    this.obtenerLocal(this.data);
   }
 
-  obtenerArtista(id: any) {
+  obtenerLocal(id: any) {
     this.localesService.getLocalsByName(id).subscribe(data => {
       this.list[0] = data;
       console.log(data);

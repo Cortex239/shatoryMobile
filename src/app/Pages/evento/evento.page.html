@@ -49,17 +49,33 @@
     </ion-card-header>
 
     <ion-card-content class="textArea">
-      <p>{{item.fecha}}</p>
-      
-      <p>{{item.precio}}</p>
+      <p>Fecha: {{item.fecha}}</p>
+      <p>Hora: {{hour}}</p>      
+      <p> Precio: ${{item.precio}}</p>
 
     </ion-card-content>
-    <ion-button fill="clear" (click)="obtenerArtista(item.idArt)"
+    <!-- <ion-button fill="clear" (click)="enviarArtista(item.idArt)"
       >►Artista</ion-button>
 
-    <ion-button fill="clear" (click)="obtenerLocal(item.idLoc)"
-    >►Local</ion-button>
+    <ion-button fill="clear" (click)="enviarLocal(item.idLoc)"
+    >►Local</ion-button> -->
   </ion-card>
+  <ion-card *ngFor="let item of listLocales; let id = index">
+        <ion-item>
+          <ion-thumbnail slot="start">
+            <img alt="Silhouette of mountains" src="{{item.linkImagen}}" />
+          </ion-thumbnail>
+          <ion-label (click)="enviarLocal(item.idLocal)">{{item.nombre}}</ion-label>
+        </ion-item>
+  </ion-card>
+  <ion-card *ngFor="let item of artist; let id = index">
+    <ion-item>
+      <ion-thumbnail slot="start">
+        <img alt="Silhouette of mountains" src="{{item.linkImagen}}" />
+      </ion-thumbnail>
+      <ion-label (click)="enviarArtista(item.idArtista)">{{item.nombreArtista}}</ion-label>
+    </ion-item>
+</ion-card>
 </ion-content>
 
 <app-footer></app-footer>

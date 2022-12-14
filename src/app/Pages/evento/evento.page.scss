@@ -80,6 +80,7 @@ div.descripcion{
   }
   ion-item{
     --background:#2a1b3d;
+    box-shadow: none !important;
   }
 
   a{
@@ -92,3 +93,10 @@ div.descripcion{
     font-size: 4.5vw;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
   }
+  ion-button{
+    font-size: min(3vw, 19px);
+    margin-top: 0;
+    padding-top: 0;
+    color: aqua;
+    
+}
