@@ -1,0 +1,94 @@
+div.descripcion{
+    text-align: center;
+  }
+  .ion-card-header{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  
+  }
+  .artista{
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  border-radius: 25px;
+  }
+  .cont{
+  position : relative;
+  }
+  .over{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  }
+  .titleText{
+  color: white;
+  font-size: min(6vw, 48px);
+  position: absolute;
+  padding-left: 2%;
+  font-family: letra;
+  }
+  .textArea{
+  text-align: justify;
+  color: #ffffff;
+  //font-size: 5vw;
+  padding-bottom: 3%;
+  font-size: min(5vw, 24px);
+  }
+  
+  
+  ion-card{
+    --background:#2a1b3d;
+    margin: 0%;
+  }
+  ion-tab-bar{
+    --background:#2a1b3d;
+    
+  }
+  .logo{
+  width: 100%;
+  --background:#2a1b3d;
+  }
+  
+  .imgArtist{
+  --background:#2a1b3d;
+    width:100%;
+    height:100%;
+  }
+  
+  .myCard{
+    position:relative;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+  }
+  
+  .myOverlay{
+    width: 100%;
+    height: 12.5vw;
+    position: absolute;
+    z-index: 99;
+    bottom: 0px;
+    background: #2a1b3d73;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    color: #fff;
+  }
+  ion-item{
+    --background:#2a1b3d;
+  }
+
+  a{
+    float: left;
+    color: #80c8ff;
+    font-size: 9vw;
+    margin: 1.5%;
+  }
+  p{
+    font-size: 4.5vw;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }

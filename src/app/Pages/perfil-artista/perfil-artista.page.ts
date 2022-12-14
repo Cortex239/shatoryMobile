@@ -39,6 +39,7 @@ export class PerfilArtistaPage implements OnInit {
   obtenerArtista(id: any) {
     this.artistService.getArtistById(id).subscribe(data => {
       this.artist = data;
+      console.log(this.artist);
     });
   };
 
@@ -63,6 +64,7 @@ export class PerfilArtistaPage implements OnInit {
 
     const favoriteData = {
       rutUser: rut,
+      // eslint-disable-next-line object-shorthand
       idArtist: idArtist,
     };
 
@@ -82,13 +84,11 @@ export class PerfilArtistaPage implements OnInit {
 
   async checkFavorite(idArtist: number){
     const token = await this.storageService.get('token');
-    console.log("hola");
-    
     if (token) {
       this.usuarioService.obtenerUsuario(token.token).subscribe(data => {
         this.user = data;
-        this.favoriteService.checkFavorite(this.user[0].rut, idArtist).subscribe(data => {
-          if(data){
+        this.favoriteService.checkFavorite(this.user[0].rut, idArtist).subscribe(data2 => {
+          if(data2){
             this.favorite = true;
           }
           else{

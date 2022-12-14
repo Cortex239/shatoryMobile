@@ -29,4 +29,7 @@ export class ListEventsPage implements OnInit {
   obtenerLocal(id: any){
     this.router.navigate(['perfil-local/' + JSON.stringify(id)]);
   }
+  obtenerEvento(id: any){
+    this.router.navigate(['evento/' + JSON.stringify(id)]);
+  }
 }

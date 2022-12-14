@@ -24,6 +24,8 @@ export class PerfilLocalPage implements OnInit {
   obtenerArtista(id: any) {
     this.localesService.getLocalsByName(id).subscribe(data => {
       this.list[0] = data;
+      console.log(data);
+      console.log(this.list[0]);
     });
   }
 }
