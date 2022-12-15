@@ -18,4 +18,8 @@ export class EventoService {
   deleteEvent(id: number){
     return this.http.delete(`https://shatory-backend.herokuapp.com/eventos/deleteEvento/${id}`);
   }
+  createEvent(Event: any){
+    return this.http.post(`https://shatory-backend.herokuapp.com/eventos/addEvento`, Event, {headers: {
+      'Content-Type' : 'application/json'}});
+  }
 }

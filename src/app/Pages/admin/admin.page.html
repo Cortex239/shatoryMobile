@@ -7,7 +7,14 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-
+<ion-content >
+  <ion-button *ngIf="isDefault()" href="admin/1">Crear Artista</ion-button>
+  <ion-button *ngIf="isDefault()" href="admin/2">Crear Local</ion-button>
+  <ion-button *ngIf="isDefault()" href="admin/3">Crear Evento</ion-button>
+  <app-create-artist *ngIf="isCreateArtist()"></app-create-artist>
+  <app-create-local *ngIf="isCreateLocal()"></app-create-local>
+  <app-create-event *ngIf="isCreateEvent()"></app-create-event>
 </ion-content>
+
+
 <app-footer></app-footer>

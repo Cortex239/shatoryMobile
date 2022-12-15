@@ -1,28 +1,25 @@
 import { Component, OnInit } from '@angular/core';
+import { IonicModule } from '@ionic/angular';
 import { Artist } from 'src/app/interfaces/artist';
 import { ArtistService } from 'src/app/services/artist.service';
 import { AlertController } from '@ionic/angular';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-admin',
-  templateUrl: './admin.page.html',
-  styleUrls: ['./admin.page.scss'],
+  selector: 'app-create-artist',
+  templateUrl: './create-artist.component.html',
+  styleUrls: ['./create-artist.component.scss'],
 })
-export class AdminPage implements OnInit {
-  
-  data: any;
+export class CreateArtistComponent implements OnInit {
+
   nombreArtista : string;
   descripcion : string;
   linkImagen : string;
-  
-  constructor(private artistServcie:ArtistService, private alertController: AlertController , private activatedRouter: ActivatedRoute) { 
-    this.data = this.activatedRouter.snapshot.paramMap.get('id');
-  }
-  
-  ngOnInit() {
 
-  }
+  constructor(private artistServcie:ArtistService, private alertController: AlertController , private activatedRouter: ActivatedRoute) { }
+
+  ngOnInit() {}
+
   async presentAlert() {
     const alert = await this.alertController.create({
       header: 'Alerta',
@@ -44,41 +41,8 @@ export class AdminPage implements OnInit {
 
     this.artistServcie.createArtist(artistaJSON).subscribe(data =>{
       this.presentAlert();
-      
+      window.location.href = "/artists";
     });
 
-  }
-  isDefault(){
-    if(this.data === '0'){
-      return true;
-    }
-    else{
-      return false;
-    }
-  }
-  isCreateArtist(){
-    if(this.data === '1'){
-      return true;
-    }
-    else{
-      return false;
-    }
-  }
-
-  isCreateLocal(){
-    if(this.data === '2'){
-      return true;
-    }
-    else{
-      return false;
-    }
-  }
-  isCreateEvent(){
-    if(this.data === '3'){
-      return true;
-    }
-    else{
-      return false;
-    }
   }
 }

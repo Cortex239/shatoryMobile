@@ -1,11 +1,11 @@
 export interface Local {
-    idLocal: string;
+    idLocal?: string;
     nombre: string;
     direccion: string;
     contacto: string;
-    web: string;
-    facebook: string;
-    instagram: string;
-    twitter: string;
+    web?: string;
+    facebook?: string;
+    instagram?: string;
+    twitter?: string;
     linkImagen: string;
 }

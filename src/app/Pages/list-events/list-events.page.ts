@@ -53,11 +53,8 @@ export class ListEventsPage implements OnInit {
     let i;
     for (i = 0 ; i < this.fechasEv.length ; i++){
       const fechaEvento = new Date(this.fechasEv[i]);
-      console.log(fechaEvento);
       if (fechaEvento < hoy){
-        this.eventoService.deleteEvent(this.list[i].idEvento).subscribe(data => {
-          console.log(data);
-        });
+        this.eventoService.deleteEvent(this.list[i].idEvento);
       }
     }
   }

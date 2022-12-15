@@ -1,5 +1,5 @@
 export interface Artist {
-    idArtista: number;
+    idArtista?: number;
     nombreArtista: string;
     descripcion: string;
     linkImagen: string;

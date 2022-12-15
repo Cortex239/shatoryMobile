@@ -24,4 +24,13 @@ export class ArtistService {
   deleteArtist(id: number){
     return this.http.delete(`https://shatory-backend.herokuapp.com/artists/deleteArtistById/${id}`);
   }
+  createArtist(artist ){
+    return this.http.post(`https://shatory-backend.herokuapp.com/artists`,artist,{headers: {
+      'Content-Type' : 'application/json'}});
+  }
+  editArtist(artist){
+    return this.http.put(`https://shatory-backend.herokuapp.com/artists/updateArtistById/${artist}`,artist,{headers: {
+      'Content-Type' : 'application/json'}});
+  }
 }
+  

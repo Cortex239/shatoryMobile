@@ -50,8 +50,7 @@ export class EventoPage implements OnInit {
       const year = date.getFullYear();
       const hour = date.getHours();
       const minutes = date.getMinutes();
-      // const seconds = date.getSeconds();
-
+      
       this.list[i].fecha = day + '/' + month + '/' + year;
       if(minutes < 10){
         this.hour = hour+ ':0' + minutes;
@@ -64,13 +63,11 @@ export class EventoPage implements OnInit {
   obtenerLocal(id: any) {
     this.localesService.getLocalsByName(id).subscribe(data => {
       this.listLocales[0] = data;
-      console.log(this.listLocales[0]);
     });
   }
   obtenerArtista(id: any) {
     this.artistService.getArtistById(id).subscribe(data => {
       this.artist = data;
-      console.log(this.artist);
     });
   };
 

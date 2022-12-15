@@ -33,8 +33,6 @@ export class PerfilLocalPage implements OnInit {
   obtenerLocal(id: any) {
     this.localesService.getLocalsByName(id).subscribe(data => {
       this.list[0] = data;
-      console.log(data);
-      console.log(this.list[0]);
     });
   }
   changesHeart(){
@@ -65,7 +63,7 @@ export class PerfilLocalPage implements OnInit {
     for( i =0; i < this.eventos.length ; i++){
       const date = new Date(this.eventos[i].fecha);
       const day = date.getDate();
-      const month = date.getMonth();
+      const month = date.getMonth() + 1;
       const year = date.getFullYear();
       // const hour = date.getHours();
       // const minutes = date.getMinutes();

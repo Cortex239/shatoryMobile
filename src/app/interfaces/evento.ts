@@ -1,6 +1,6 @@
 export interface Evento {
-    date: string | number | Date;
-    idEvento: number;
+    date?: string | number | Date;
+    idEvento?: number;
     nombreEvento: string;
     precio: number;
     fecha: string;

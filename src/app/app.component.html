@@ -10,12 +10,8 @@
             <ion-item *ngIf="vld">
               <ion-icon name="play-circle-outline"></ion-icon>
               <ion-title [routerLink]="['sesion']">Iniciar Sesion</ion-title>
-            </ion-item>
-            <ion-item *ngIf="!vld && isAdmin===1">
-              <ion-icon name="play-circle-outline"></ion-icon>
-              <ion-title [routerLink]="['admin']">{{name}}</ion-title>
-            </ion-item>
-            <ion-item *ngIf="!vld && isAdmin===0">
+            </ion-item>  
+            <ion-item *ngIf="!vld">
               <ion-icon name="play-circle-outline"></ion-icon>
               <ion-title [routerLink]="['perfil-usuario']">{{name}}</ion-title>
             </ion-item>
@@ -41,7 +37,13 @@
               <ion-icon name="megaphone-outline"></ion-icon>
               <ion-title [routerLink]="['list-events']" >Eventos</ion-title>
             </ion-item>
-          </ion-menu-toggle>  
+          </ion-menu-toggle>
+          <ion-menu-toggle>
+            <ion-item *ngIf="!vld && isAdmin===1">
+              <ion-icon name="cog-outline"></ion-icon>
+              <ion-title [routerLink]="['admin/0']" >Admin</ion-title>
+            </ion-item>
+          </ion-menu-toggle>   
         </ion-list>
       </ion-content>
     </ion-menu>

@@ -1,0 +1,86 @@
+<ion-content>
+  <ion-text class="titulo">Agregar Local</ion-text>
+  <form>
+    <ion-item lines="full">
+      <ion-label position="floating">Nombre *</ion-label>
+      <ion-input
+        [(ngModel)]="nombre"
+        [ngModelOptions]="{standalone: true}"
+        type="text"
+        required
+      ></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">Direccion *</ion-label>
+      <ion-input
+        [(ngModel)]="direccion"
+        [ngModelOptions]="{standalone: true}"
+        type="text"
+        required
+      ></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">Contacto *</ion-label>
+      <ion-input
+        [(ngModel)]="contacto"
+        [ngModelOptions]="{standalone: true}"
+        type="text"
+        required
+      ></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">Web</ion-label>
+      <ion-input
+        [(ngModel)]="web"
+        [ngModelOptions]="{standalone: true}"
+        type="text"
+        required
+      ></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">Facebook</ion-label>
+      <ion-input
+        [(ngModel)]="facebook"
+        [ngModelOptions]="{standalone: true}"
+        type="text"
+        required
+      ></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">Instagram</ion-label>
+      <ion-input
+        [(ngModel)]="instagram"
+        [ngModelOptions]="{standalone: true}"
+        type="text"
+        required
+      ></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">Twitter</ion-label>
+      <ion-input
+        [(ngModel)]="twitter"
+        [ngModelOptions]="{standalone: true}"
+        type="text"
+        required
+      ></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">Link Imagen *</ion-label>
+      <ion-textarea  
+      [(ngModel)]="linkImagen"
+        [ngModelOptions]="{standalone: true}"
+        type="text"
+        required></ion-textarea>
+    </ion-item>
+    <ion-row>
+      <ion-col>
+        <ion-button
+          color="success"
+          expand="block"
+          (click)="enviarLocal()"
+          >Crear local</ion-button
+        >
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-content>

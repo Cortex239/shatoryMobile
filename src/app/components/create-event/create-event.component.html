@@ -1,0 +1,69 @@
+<ion-content>
+  <ion-text class="titulo">Agregar Evento</ion-text>
+  <form>
+    <ion-item lines="full">
+      <ion-label position="floating">Fecha del evento (año/mes/dia)</ion-label>
+      <ion-input
+        [(ngModel)]="fecha"
+        [ngModelOptions]="{standalone: true}"
+        type="text"
+        required
+      ></ion-input>
+      
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating"> Nombre Evento </ion-label>
+      <ion-input
+        [(ngModel)]="nombreEvento"
+        [ngModelOptions]="{standalone: true}"
+        type="text"
+        required
+      ></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating"> Precio Evento </ion-label>
+      <ion-input
+        [(ngModel)]="precio"
+        [ngModelOptions]="{standalone: true}"
+        type="text"
+        required
+      ></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating"> ID del local Evento </ion-label>
+      <ion-input
+        [(ngModel)]="idLoc"
+        [ngModelOptions]="{standalone: true}"
+        type="text"
+        required
+      ></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating"> ID del artista que se presenta </ion-label>
+      <ion-input
+        [(ngModel)]="idArt"
+        [ngModelOptions]="{standalone: true}"
+        type="text"
+        required
+      ></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">Link Imagen</ion-label>
+      <ion-textarea  
+      [(ngModel)]="imagenEvento"
+        [ngModelOptions]="{standalone: true}"
+        type="text"
+        required></ion-textarea>
+    </ion-item>
+    <ion-row>
+      <ion-col>
+        <ion-button
+          color="success"
+          expand="block"
+          (click)="enviarEvento()"
+          >Crear Evento</ion-button
+        >
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-content>

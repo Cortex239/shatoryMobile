@@ -35,7 +35,6 @@ export class AppComponent  implements OnInit{
 
     const token = await this.storageService.get('token');
     if(!token){
-      console.log('No hay token');
       this.vld = true;
       return;
     }

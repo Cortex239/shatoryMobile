@@ -1,0 +1,41 @@
+<ion-content>
+  <ion-text class="titulo">Agregar Artista</ion-text>
+  <form>
+    <ion-item lines="full">
+      <ion-label position="floating">Nombre</ion-label>
+      <ion-input
+        [(ngModel)]="nombreArtista"
+        [ngModelOptions]="{standalone: true}"
+        type="text"
+        required
+      ></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">Descripcion</ion-label>
+      <ion-textarea
+      [(ngModel)]="descripcion"
+        [ngModelOptions]="{standalone: true}"
+        type="text"
+        required
+        ></ion-textarea>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">Link Imagen</ion-label>
+      <ion-textarea  
+      [(ngModel)]="linkImagen"
+        [ngModelOptions]="{standalone: true}"
+        type="text"
+        required></ion-textarea>
+    </ion-item>
+    <ion-row>
+      <ion-col>
+        <ion-button
+          color="success"
+          expand="block"
+          (click)="enviarArtista()"
+          >Crear artista</ion-button
+        >
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-content>

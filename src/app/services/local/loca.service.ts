@@ -16,4 +16,8 @@ export class LocaService {
   getLocalsByName(idLocal: number) {
     return this.http.get<Local>(`https://shatory-backend.herokuapp.com/local/${idLocal}`);
   }
+  createLocal(local: any){
+    return this.http.post(`https://shatory-backend.herokuapp.com/local`,local,{headers: {
+      'Content-Type' : 'application/json'}});
+  }
 }

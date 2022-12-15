@@ -32,20 +32,18 @@ export class PerfilArtistaPage implements OnInit {
     private alertController: AlertController) {
 
     this.data = this.activatedRouter.snapshot.paramMap.get('id');
-  }
+  };
 
   ngOnInit() {
     this.isLoged = false;
     this.checkLogin();
     this.obtenerArtista(this.data);
     this.checkFavorite(this.data);
-    console.log(this.isLoged);
-  }
+  };
 
   obtenerArtista(id: any) {
     this.artistService.getArtistById(id).subscribe(data => {
       this.artist = data;
-      console.log(this.artist);
     });
   };
 
@@ -68,7 +66,7 @@ export class PerfilArtistaPage implements OnInit {
     else{
       this.isLoged = false;
     }
-  }
+  };
 
   async addFavorite(rut: string, idArtist: number){
 
@@ -79,7 +77,7 @@ export class PerfilArtistaPage implements OnInit {
     };
 
     this.favoriteService.addFAvorite(JSON.stringify(favoriteData)).subscribe();
-  }
+  };
 
   async presentAlert() {
     const alert = await this.alertController.create({
@@ -90,7 +88,7 @@ export class PerfilArtistaPage implements OnInit {
     });
 
     await alert.present();
-  }
+  };
 
   async checkFavorite(idArtist: number){
     const token = await this.storageService.get('token');
@@ -109,7 +107,7 @@ export class PerfilArtistaPage implements OnInit {
         });
       });
     }
-  }
+  };
 
   async dltFavorite(idArtist: number){
     const token = await this.storageService.get('token');
@@ -118,11 +116,11 @@ export class PerfilArtistaPage implements OnInit {
       this.usuarioService.obtenerUsuario(token.token).subscribe(data => {
         this.user = data;
         this.favoriteService.deleteFavorite(this.user[0].rut, idArtist).subscribe( data2 => {
-          console.log(data2);
+        
         });
       });
     }
-  }
+  };
 
   async changesHeart(){
     if(!this.favorite){
@@ -135,17 +133,22 @@ export class PerfilArtistaPage implements OnInit {
       await this.dltFavorite(this.data);
       this.favorite = false;
     }
-  }
+  };
   eliminarArtista(id: number){
     this.artistService.deleteArtist(id).subscribe(data => {
-      console.log(data);
+      
       window.location.href='artists';
     });
-  }
+  };
+
+  editarArtista(){
+    
+  };
+
   isLogedReturn(){
     return this.isLoged;
-  }
+  };
   isAdminReturn(){
     return this.isAdmin;
-  }
+  };
 }
