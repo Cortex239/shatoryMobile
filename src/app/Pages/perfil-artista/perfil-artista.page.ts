@@ -142,7 +142,7 @@ export class PerfilArtistaPage implements OnInit {
   };
 
   editarArtista(){
-    
+
   };
 
   isLogedReturn(){
@@ -151,4 +151,12 @@ export class PerfilArtistaPage implements OnInit {
   isAdminReturn(){
     return this.isAdmin;
   };
+  isEditArtist(){
+    if(this.data === '4'){
+      return true;
+    }
+    else{
+      return false;
+    }
+  }
 }

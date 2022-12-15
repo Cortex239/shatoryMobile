@@ -10,12 +10,7 @@
   <ion-card *ngFor="let item of list; let id = index">
     <ion-card-header>
       <ion-card class="myCard">
-        <img
-          class="imgArtist"
-          src="{{item.linkImagen}}"
-          alt=""
-          class="artista"
-        />
+        <img class="imgArtist" src="{{item.linkImagen}}" alt="" class="artista" />
         <div class="myOverlay">
           <ion-text class="titleText"> {{item.nombre}}</ion-text>
           <div class="card-subtitle">
@@ -31,35 +26,35 @@
 
     <ion-card-content class="textArea">
       <p>{{item.direccion}}</p>
-      
+
       <p>{{item.contacto}}</p>
-      <a href="{{item.facebook}}" *ngIf="item.facebook"
-        ><ion-icon name="logo-facebook"></ion-icon
-      ></a>
+      <a href="{{item.facebook}}" *ngIf="item.facebook">
+        <ion-icon name="logo-facebook"></ion-icon>
+      </a>
 
-      <a href="{{item.instagram}}" *ngIf="item.instagram"
-        ><ion-icon name="logo-instagram"></ion-icon
-      ></a>
+      <a href="{{item.instagram}}" *ngIf="item.instagram">
+        <ion-icon name="logo-instagram"></ion-icon>
+      </a>
 
-      <a href="{{item.twitter}}" *ngIf="item.twitter"
-        ><ion-icon name="logo-twitter"></ion-icon
-      ></a>
+      <a href="{{item.twitter}}" *ngIf="item.twitter">
+        <ion-icon name="logo-twitter"></ion-icon>
+      </a>
 
-      <a href="{{item.web}}" *ngIf="item.web"
-        ><ion-icon name="globe-outline"></ion-icon
-      ></a>
+      <a href="{{item.web}}" *ngIf="item.web">
+        <ion-icon name="globe-outline"></ion-icon>
+      </a>
     </ion-card-content>
   </ion-card>
-
+    <div id="map"></div>
   <ion-card *ngFor="let item of eventos; let id = index">
     <ion-card-content *ngIf="verifIdLocal(item.idLoc)">
-        <ion-item>
-          <ion-thumbnail slot="start">
-            <img src="{{item.imagenEvento}}" />
-          </ion-thumbnail>
-          <ion-label>{{item.nombreEvento}}</ion-label>
-          <ion-card-subtitle>{{item.fecha}}</ion-card-subtitle>
-        </ion-item>
+      <ion-item>
+        <ion-thumbnail slot="start">
+          <img src="{{item.imagenEvento}}" />
+        </ion-thumbnail>
+        <ion-label>{{item.nombreEvento}}</ion-label>
+        <ion-card-subtitle>{{item.fecha}}</ion-card-subtitle>
+      </ion-item>
     </ion-card-content>
   </ion-card>
 </ion-content>

@@ -29,9 +29,9 @@
     </ion-card-header>
     <ion-card-content class="textArea"> {{item.descripcion}} </ion-card-content>
     <ion-button *ngIf="isAdminReturn()" (click)="eliminarArtista(item.idArtista)">Eliminar</ion-button>
-    <ion-button *ngIf="isAdminReturn()" (click)="editarArtista()">Editar</ion-button>
+    <ion-button *ngIf="isAdminReturn()" href="admin/4">Editar</ion-button>
+    <app-edit-artist *ngIf="isEditArtist()"></app-edit-artist>
   </ion-card>
   
 </ion-content>
-
 <app-footer></app-footer>

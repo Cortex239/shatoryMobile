@@ -19,6 +19,8 @@ export class CreateLocalComponent implements OnInit {
   instagram?: string;
   twitter?: string;
   linkImagen: string;
+  latitud : number;
+  longitud : number;
   
   constructor(private alertController: AlertController,private localesService: LocaService) { }
 
@@ -43,7 +45,9 @@ export class CreateLocalComponent implements OnInit {
       facebook : this.facebook,
       instagram : this.instagram,
       twitter : this.twitter,
-      linkImagen : this.linkImagen
+      linkImagen : this.linkImagen,
+      latitud : this.latitud,
+      longitud : this.longitud
     };
 
     const localJSON = JSON.stringify(nuevoLocal);

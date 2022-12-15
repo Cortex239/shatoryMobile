@@ -7,10 +7,11 @@ import { CreateArtistComponent } from './create-artist/create-artist.component';
 import { CreateLocalComponent } from './create-local/create-local.component';
 import { FormsModule } from '@angular/forms';
 import { CreateEventComponent } from './create-event/create-event.component';
+import { EditArtistComponent } from './edit-artist/edit-artist.component';
 
 @NgModule({
-    declarations: [FooterComponent,CreateArtistComponent,CreateLocalComponent,CreateEventComponent],
-    exports: [FooterComponent,CreateArtistComponent,CreateLocalComponent,CreateEventComponent],
+    declarations: [FooterComponent,CreateArtistComponent,CreateLocalComponent,CreateEventComponent, EditArtistComponent],
+    exports: [FooterComponent,CreateArtistComponent,CreateLocalComponent,CreateEventComponent, EditArtistComponent],
     imports: [IonicModule,CommonModule,RouterModule,FormsModule],
 })
 
