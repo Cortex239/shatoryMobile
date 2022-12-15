@@ -41,7 +41,7 @@ export class ListEventsPage implements OnInit {
       const date = new Date(this.list[i].fecha);
       this.fechasEv.push(date);
       const day = date.getDate();
-      const month = date.getMonth();
+      const month = date.getMonth()+1;
       const year = date.getFullYear();
       this.list[i].fecha = day + '/' + month + '/' + year;
     }

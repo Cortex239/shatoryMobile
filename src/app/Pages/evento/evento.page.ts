@@ -18,14 +18,13 @@ export class EventoPage implements OnInit {
   hour: string;
   listLocales: Array<any> = [];
   artist: any;
-  
+
   // eslint-disable-next-line max-len
   constructor(private activatedRouter: ActivatedRoute, private eventoService: EventoService, private router: Router, private localesService: LocaService , private artistService: ArtistService) {
     this.data = this.activatedRouter.snapshot.paramMap.get('id');
    }
 
   ngOnInit(){
-    
     this.obternerEvento(this.data);
   }
   obternerEvento(id: any){
@@ -47,7 +46,7 @@ export class EventoPage implements OnInit {
     for( i =0; i < this.list.length ; i++){
       const date = new Date(this.list[i].fecha);
       const day = date.getDate();
-      const month = date.getMonth();
+      const month = date.getMonth()+1;
       const year = date.getFullYear();
       const hour = date.getHours();
       const minutes = date.getMinutes();
@@ -74,5 +73,5 @@ export class EventoPage implements OnInit {
       console.log(this.artist);
     });
   };
-  
+
 }
